@@ -7,35 +7,44 @@
     <meta name="viewport" content="with=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/slick.css">
-    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"> 
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://kit.fontawesome.com/f3dff3c59a.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function () {
+            $(".headC").click(function () {
+                $(".top_menu").slideToggle();
+            });
+        });
+    </script>
+
 </head>
 
 <body>
     <header>
-        <div id="icon_wrap">
-            <span class="far fa-clock icon"></span>
-        </div>
-        <div id="logo_wrap">
-            <h1><a href="/">Free Time Games</a></h1>
-        </div>
+        <div class="container">
+            <div class="container-small">
+                <a href="index.html" class="headA"><span class="far fa-clock icon"></span> Free Time Games</a>
 
-        <div id="top_menu">
-            <ul>
-                <li class="top">
-                    <a href="/"><span>Top</span></a>
-                </li>
-                <li class="games">
-                    <a href="#"><span>Games</span></a>
-                </li>
-                <li class="search">
-                    <a href="#"><span>Search</span></a>
-                </li>
-                <li class="about">
-                    <a href="#"><span>About</span></a>
-                </li>
-            </ul>
+                <button type="button" class="headC">
+                    <span class="fa fa-bars" title="MENU"></span>
+                </button>
+            </div>
+
+            <nav class="top_menu">
+                <ul>
+                    <li class="top">
+                        <a href="index.html"><span class="fas fa-home"></span> Top</a>
+                    </li>
+                    <li class="games">
+                        <a href="#listable"><span class="fas fa-gamepad"></span> Games</a>
+                    </li>
+                    <li class="about">
+                        <a href="#aboutcont"><span class="fas fa-book"></span> About</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -50,11 +59,21 @@
     <section id="listable">
         <table id="allgames">
             <tr>
-                <td><span class="fas fa-gamepad"></span><p>15puzzle</p><img alt="slide_01" src="img/demo1.jpg" /></td>
-                <td><p>15puzzle</p><img alt="slide_02" src="img/demo2.jpg" /></td>
-                <td><p>15puzzle</p><img alt="slide_03" src="img/demo3.jpg" /></td>
+                <td><span class="fas fa-gamepad"></span>
+                    <p>15puzzle</p><img alt="slide_01" src="img/demo1.jpg" />
+                </td>
+                <td>
+                    <p>15puzzle</p><img alt="slide_02" src="img/demo2.jpg" />
+                </td>
+                <td>
+                    <p>15puzzle</p><img alt="slide_03" src="img/demo3.jpg" />
+                </td>
             </tr>
         </table>
+    </section>
+
+    <section id="aboutcont">
+
     </section>
 
     <footer>
@@ -89,8 +108,8 @@
 
     </footer>
 
-    
-    <script src="js/jquery-3.5.1.min.js"></script>
+
+
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
