@@ -135,15 +135,6 @@ header {
     color: black!important;
 }
 
-#allgames {
-    margin:0 auto; 
-}
-
-#allgames img {
-    height: 200px;
-    width: 200px;
-}
-
 footer {
     color: #fff;
     background-color: #415AA6;
@@ -241,4 +232,28 @@ footer .container {
     font-size: 12px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
+}
+
+@media(max-width: 568px) {
+    #slider {
+        display: none;
+    }
+}
+
+.listable{
+    width: 100%;
+}
+
+.allgames {
+    max-width: 1000px;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.allgames img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
