@@ -267,12 +267,6 @@ footer .container {
     height: auto;
 }
 
-.aboutcont {
-    /*background-color: var(--accent2-color);*/
-    /*background-color: rgb(245, 231, 224);*/
-    /*color: #FFF;*/
-}
-
 .aboutcont .text {
     padding: 20px;
 }

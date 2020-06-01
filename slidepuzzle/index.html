@@ -1,77 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
 <head>
-    <title>15 puzzle</title>
     <meta charset="utf-8">
-    <style>
-        .tile{
-            width: 70px;
-            height: 70px;
-            border: 1px solid blue;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 36px;
-            background-color: white;
-            box-shadow: rgb(128, 128, 128) 5px 5px;
-        }
-    </style>
+    <title>Slide Puzzle 15</title>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://kit.fontawesome.com/f3dff3c59a.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function () {
+            $(".headC").click(function () {
+                $(".top_menu").slideToggle();
+            });
+        });
+    </script>
+
     <script>
         "use strict";
 
         //Timer===================================================
         var timerId = NaN, count = 0;
 
-        function stbtn_click(){
+        function stbtn_click() {
             var btn = document.getElementById("stbtn");
 
-            if(btn.textContent === "START"){
+            if (btn.textContent === "START") {
                 timerId = setInterval(tick, 1000);
 
-                for(var i=0; i<1000; i++){
-                    click({ srcElement: {index: Math.floor(Math.random()*16)}})
+                for (var i = 0; i < 1000; i++) {
+                    click({ srcElement: { index: Math.floor(Math.random() * 16) } })
                 }
-                
+
                 btn.textContent = "RE-START";
             } else {
                 clearInterval(timerId);
                 timerId = NaN, count = 0;
                 document.getElementById("counter").textContent = count;
                 timerId = setInterval(tick, 1000);
-                for(var i=0; i<1000; i++){
-                    click({ srcElement: {index: Math.floor(Math.random()*16)}})
+                for (var i = 0; i < 1000; i++) {
+                    click({ srcElement: { index: Math.floor(Math.random() * 16) } })
                 }
             }
         }
 
-        function tick(){
+        function tick() {
             count++;
             document.getElementById("counter").textContent = count;
         }
         //========================================================
 
         //広域変数
-        var tiles =[];
+        var tiles = [];
 
         //クッキーのチェック関数
-        function checkCookie(){
+        function checkCookie() {
             var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)puzzle_rec\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            console.log(document.cookie);
-            console.log('"'+ cookieValue +'"');
+            //console.log(document.cookie);
+            //console.log('"' + cookieValue + '"');
             return cookieValue;
         }
 
         //初期関数
-        function init(){
+        function init() {
             //クッキー処理==========================================
             //クッキーに最短クリア時間があるか確認
             //あれば表示
             //無ければ空欄(-)
-                var cookieValue = checkCookie();
-                if(cookieValue===""){
-                    document.getElementById("fastest").textContent="Record time : - [sec]";
-                } else {
-                    document.getElementById("fastest").textContent="Record time : " + cookieValue + " [sec]";
-                }
+            var cookieValue = checkCookie();
+            if (cookieValue === "") {
+                document.getElementById("fastest").textContent = " - ";
+            } else {
+                document.getElementById("fastest").textContent = cookieValue;
+            }
             /*
                 function deleteCookie(){
                 document.cookie = "mycookie=; expires=0";
@@ -82,97 +85,206 @@
 
             var table = document.getElementById("table");
 
-            for(var i=0; i<4; i++){
+            for (var i = 0; i < 4; i++) {
                 var tr = document.createElement("tr");
-                
 
-                for(var j=0; j<4; j++){
+
+                for (var j = 0; j < 4; j++) {
                     var td = document.createElement("td");
                     var index = i * 4 + j;
-                    
-                    console.log("iの値は"+i);
-                    console.log("jの値は"+j);
-                    console.log("indexの値は"+index);
-                    
                     td.className = "tile";
                     td.index = index;
-                    if(index===15){
+                    if (index === 15) {
                         td.value = 0;
                     } else {
-                        td.value = index +1;
+                        td.value = index + 1;
                     }
-                    
-                    if(index===15){
+
+                    if (index === 15) {
                         td.textContent = "";
                     } else {
-                        td.textContent = index +1;
+                        td.textContent = index + 1;
                     }
-                    
+
                     td.onclick = click;
                     tr.appendChild(td);
                     tiles.push(td);
                 }
                 table.appendChild(tr);
             }
+
+            var trEle = document.querySelectorAll('#table tr');
+            trEle[3].querySelectorAll("td")[3].style.visibility = 'hidden';
         }
 
-        function click(e){
+        function click(e) {
             var i = e.srcElement.index;
             /*var deb = tiles[i-4].value;*/
-            console.log("クリックされました。iの値は"+i);
+            //console.log("クリックされました。iの値は" + i);
             /*console.log("条件式1の値は"+deb);*/
 
 
-            if(i-4>=0 && tiles[i-4].value==0){
-                swap(i, i-4);
-            } else if(i+4<16 && tiles[i+4].value==0){
-                swap(i, i+4);
-            } else if(i%4!=0 && tiles[i-1].value==0){
-                swap(i, i-1);
-            } else if(i%4!=3 && tiles[i+1].value==0){
-                swap(i, i+1);
+            if (i - 4 >= 0 && tiles[i - 4].value == 0) {
+                swap(i, i - 4);
+            } else if (i + 4 < 16 && tiles[i + 4].value == 0) {
+                swap(i, i + 4);
+            } else if (i % 4 != 0 && tiles[i - 1].value == 0) {
+                swap(i, i - 1);
+            } else if (i % 4 != 3 && tiles[i + 1].value == 0) {
+                swap(i, i + 1);
             }
 
             //クリアしているかのチェック
-            if(document.getElementById("stbtn").textContent==="RE-START"){
-                if( tiles[0].value==1 && tiles[1].value==2 && tiles[2].value==3 && tiles[3].value==4 && 
-                    tiles[4].value==5 && tiles[5].value==6 && tiles[6].value==7 && tiles[7].value==8 &&
-                    tiles[8].value==9 && tiles[9].value==10 && tiles[10].value==11 && tiles[11].value==12 && 
-                    tiles[12].value==13 && tiles[13].value==14 && tiles[14].value==15 && tiles[15].value==0
-                ){
+            if (document.getElementById("stbtn").textContent === "RE-START") {
+                if (tiles[0].value == 1 && tiles[1].value == 2 && tiles[2].value == 3 && tiles[3].value == 4 &&
+                    tiles[4].value == 5 && tiles[5].value == 6 && tiles[6].value == 7 && tiles[7].value == 8 &&
+                    tiles[8].value == 9 && tiles[9].value == 10 && tiles[10].value == 11 && tiles[11].value == 12 &&
+                    tiles[12].value == 13 && tiles[13].value == 14 && tiles[14].value == 15 && tiles[15].value == 0
+                ) {
                     var clearTime = document.getElementById("counter").textContent;
-                    document.getElementById("counter").textContent = clearTime +"[sec] clear!!!";
+                    document.getElementById("counter").textContent = clearTime + "Clear!!!";
                     clearInterval(timerId);
                     timerId = NaN, count = 0;
-                    document.getElementById("stbtn").textContent="START";
-                    
+                    document.getElementById("stbtn").textContent = "START";
+
                     //最短記録をクッキーに登録する
                     //クリアタイムと今までの最速タイムを比較する
                     var cookieValue = checkCookie();
-                    if (cookieValue>clearTime){
+                    if (cookieValue > clearTime) {
                         document.cookie = "puzzle_rec=" + clearTime;
-                        document.getElementById("fastest").textContent="Record time : " + clearTime + " [sec]";
-                        console.log(document.cookie);
-                    }            
+                        document.getElementById("fastest").textContent = "Record time : " + clearTime + " [sec]";
+                        //console.log(document.cookie);
+                    }
                 }
             }
-            
+
         }
 
-        function swap(i,j){
+        function swap(i, j) {
             var tmp = tiles[i].value;
-            console.log("swap実行します。tmpの値は"+tmp);
+            console.log("swap実行します。tmpの値は" + tmp);
+            console.log("iの値は" + i);
+            console.log("jの値は" + j);
             tiles[i].textContent = tiles[j].textContent;
             tiles[i].value = tiles[j].value;
             tiles[j].textContent = tmp;
             tiles[j].value = tmp;
+
+            //数字のないパネルを消す====================================
+            //何番目のtrか検出する
+            if (i < 4) {
+                var row = 0;
+            } else if (i < 8) {
+                var row = 1;
+            } else if (i < 12) {
+                var row = 2;
+            } else {
+                var row = 3;
+            }
+
+            //何番目のtdか検出する
+            if (row === 0) {
+                var column = i;
+            } else {
+                var column = i % 4;
+            }
+
+            console.log("rowの値は" + row);
+            console.log("columnの値は" + column);
+            
+            
+            var trEle = document.querySelectorAll('#table tr');
+            console.log(trEle[row].querySelectorAll("td")[column]);
+            trEle[row].querySelectorAll("td")[column].style.visibility = 'hidden';
+
+            //消されていたパネルを復活する===============================
+            //何番目のtrか検出する
+            if (j<4) {
+                var row = 0;
+            } else if (j<8) {
+                var row = 1;
+            } else if (j<12) {
+                var row = 2;
+            } else {
+                var row = 3;
+            }
+
+            //何番目のtdか検出する
+            if (row === 0) {
+                var column = j;
+            } else {
+                var column = j % 4;
+            }
+
+            var trEle = document.querySelectorAll('#table tr');
+            console.log(trEle[row].querySelectorAll("td")[column]);
+            trEle[row].querySelectorAll("td")[column].style.visibility = 'visible';
+
         }
     </script>
 </head>
+
 <body onload="init()">
-    <button id="stbtn" onclick="stbtn_click()">START</button>
-    <h2 id="counter">Time:0[sec]</h2>
-    <h2 id="fastest"></h2>
-    <table id="table"></table>
+    <header>
+        <div class="container">
+            <div class="container-small">
+                <a href="../index.html" class="headA"><span class="fas fa-gamepad icon"></span> Slide Puzzle ⓯</a>
+
+                <button type="button" class="headC">
+                    <span class="fa fa-bars" title="MENU"></span>
+                </button>
+            </div>
+
+            <nav class="top_menu">
+                <ul>
+                    <li class="top">
+                        <a href="../index.html"><span class="fas fa-home"></span> Top</a>
+                    </li>
+                    <li class="games">
+                        <a href="../index.html"><span class="fas fa-gamepad"></span> Games</a>
+                    </li>
+                    <li class="about">
+                        <a href="../index.html"><span class="fas fa-book"></span> About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="info_time">
+            <div class="container">
+                <div class="best_cont">
+                    <span class="far fa-star"> Best Time : </span>
+                    <span id="fastest"></span>
+                    <span> [s]</span>
+                </div>
+                <div class="time_cont">
+                    <span class="fas fa-hourglass-half"> Time : </span>
+                    <span id="counter">0</span>
+                    <span> [s]</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="puzzle">
+            <div class="container">
+                <div class="waku">
+                    <table id="table"></table>
+                </div>
+            </div>
+        </section>
+
+        <section id="ctrl">
+            <div class="container">
+                <a id="stbtn" onclick="stbtn_click()"><span class="fas fa-play"></span><br>START</a>
+                <a id="spbtn" onclick="spbtn_click()"><span class="fas fa-stop"></span><br>STOP</a>
+                <br><a href="../index.html"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
 </body>
+
 </html>

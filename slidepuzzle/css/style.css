@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+.tile{
+    width: 70px;
+    height: 70px;
+    border: 1px solid #3f2510;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 36px;
+    background-color: #D9B9A7;
+    box-shadow: inset 0px 3px 0 rgba(255,255,255,0.3), 0 3px 3px rgba(0, 0, 0, 0.3);
+    color: rgb(248, 241, 239);
+    text-shadow: 1px 1px 1px #3f2510;
+}
+
+
+header {
+    background-color: #F25041;
+}
+
+.headA {
+    color: #fff;
+}
+
+#info_time {
+    width: 100%;
+}
+
+#info_time .container{
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.best_cont {
+    text-align: center;
+}
+
+.best_cont {
+    display: inline-block;
+    position: relative;
+    padding: 15px 20px;
+    font-size: 18px;/*フォントサイズ*/
+    color: #FFF;/*フォントカラー*/
+    background: #024873;/*背景色*/
+}
+  
+.best_cont:before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-right: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+}
+  
+.best_cont:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    right: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-left: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+}
+
+#counter {
+    font-weight: 700;
+}
+
+.time_cont {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+#puzzle {
+    width: 100%;
+}
+
+#puzzle .container{
+    max-width: 1000px;
+    margin: 30px auto;
+    margin-top: unset;
+    text-align: center
+}
+
+.waku {
+    background-color: rgb(197, 144, 126);
+    padding: 0;
+    display: inline-block;
+    border: solid;
+    border-color: darksalmon;
+    border-width: 10px;
+}
+
+#ctrl {
+    width:100%;
+}
+
+#ctrl .container{
+    max-width: 1000px;
+    text-align: center;
+    margin: 10px auto;
+
+}
+
+#table {
+    margin: 0 auto;
+}
+
+#stbtn, #spbtn {
+    display: inline-block;
+    text-decoration: none;
+    background: #5dc3d0;
+    color: rgb(82, 142, 150);
+    width: 122px;
+    font-size: 20px;
+    height: 100px;
+    line-height: 0px;
+    border-radius: 10%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: inset 0px 3px 0 rgba(255,255,255,0.3), 0 3px 3px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    border-bottom: solid 3px #549fa9;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
+    transition: .4s;
+}
+
+#spbtn {
+    color: #b85b5b;
+    background: #ff8181;
+    border-bottom: solid 3px  #b85b5b;
+}
+
+
+
+
+#stbtn span, #spbtn span {
+    line-height: 80px;
+}
+
+#stbtn:active, #spbtn:active {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
+    border-bottom: none;
+}
+
+#stbtn:hover {
+    color: #024873;
+}
+
+#spbtn:hover {
+    color: #BF0637;
+}
