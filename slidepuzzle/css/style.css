@@ -29,6 +29,7 @@ header {
 #info_time .container{
     max-width: 1000px;
     margin: 0 auto;
+    margin-top: 5px;
     text-align: center;
 }
 
@@ -71,8 +72,12 @@ header {
 
 .time_cont {
     text-align: center;
-    margin-top: 30px;
-    font-size: 25px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#clr_s {
+    font-weight: 700;
 }
 
 #puzzle {
@@ -81,7 +86,6 @@ header {
 
 #puzzle .container{
     max-width: 1000px;
-    margin: 30px auto;
     margin-top: unset;
     text-align: center
 }
