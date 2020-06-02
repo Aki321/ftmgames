@@ -27,6 +27,8 @@
         function stbtn_click() {
             var btn = document.getElementById("stbtn");
 
+            document.getElementById("clr_s").innerText = " [s]";
+
             if (btn.textContent === "START") {
                 timerId = setInterval(tick, 1000);
 
@@ -34,7 +36,7 @@
                     click({ srcElement: { index: Math.floor(Math.random() * 16) } })
                 }
 
-                btn.textContent = "RE-START";
+                btn.innerHTML = '<span class="fas fa-play"></span><br>Re-START';
             } else {
                 clearInterval(timerId);
                 timerId = NaN, count = 0;
@@ -52,14 +54,19 @@
         }
         //========================================================
 
+        //更新====================
+        function spbtn_click() {
+            location.reload();
+        }
+
         //広域変数
         var tiles = [];
 
         //クッキーのチェック関数
         function checkCookie() {
             var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)puzzle_rec\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            //console.log(document.cookie);
-            //console.log('"' + cookieValue + '"');
+            console.log("現在のクッキーは" + document.cookie);
+            console.log('"' + cookieValue + '"');
             return cookieValue;
         }
 
@@ -135,25 +142,41 @@
             }
 
             //クリアしているかのチェック
-            if (document.getElementById("stbtn").textContent === "RE-START") {
+            if (document.getElementById("stbtn").textContent === "Re-START") {
                 if (tiles[0].value == 1 && tiles[1].value == 2 && tiles[2].value == 3 && tiles[3].value == 4 &&
                     tiles[4].value == 5 && tiles[5].value == 6 && tiles[6].value == 7 && tiles[7].value == 8 &&
                     tiles[8].value == 9 && tiles[9].value == 10 && tiles[10].value == 11 && tiles[11].value == 12 &&
                     tiles[12].value == 13 && tiles[13].value == 14 && tiles[14].value == 15 && tiles[15].value == 0
                 ) {
                     var clearTime = document.getElementById("counter").textContent;
-                    document.getElementById("counter").textContent = clearTime + "Clear!!!";
+                    document.getElementById("counter").textContent = clearTime;
                     clearInterval(timerId);
                     timerId = NaN, count = 0;
-                    document.getElementById("stbtn").textContent = "START";
+                    //document.getElementById("stbtn").textContent = "START";
+                    document.getElementById("stbtn").innerHTML = '<span class="fas fa-play"></span><br>START';
+                    document.getElementById("clr_s").innerText = " [s] CLEAR !!!";
 
                     //最短記録をクッキーに登録する
                     //クリアタイムと今までの最速タイムを比較する
                     var cookieValue = checkCookie();
-                    if (cookieValue > clearTime) {
+                    console.log("クリアしました。cookieValueは" + cookieValue);
+
+                    console.log("cookieValueは" + cookieValue);
+                    console.log("clearTimeは" + clearTime);
+
+                    if (cookieValue === "") {
+                        document.cookie = "puzzle_rec=" + clearTime;
+                    } else if (cookieValue > clearTime) {
                         document.cookie = "puzzle_rec=" + clearTime;
                         document.getElementById("fastest").textContent = "Record time : " + clearTime + " [sec]";
                         //console.log(document.cookie);
+                    }
+
+                    var cookieValue = checkCookie();
+                    if (cookieValue === "") {
+                        document.getElementById("fastest").textContent = " - ";
+                    } else {
+                        document.getElementById("fastest").textContent = cookieValue;
                     }
                 }
             }
@@ -191,19 +214,19 @@
 
             console.log("rowの値は" + row);
             console.log("columnの値は" + column);
-            
-            
+
+
             var trEle = document.querySelectorAll('#table tr');
             console.log(trEle[row].querySelectorAll("td")[column]);
             trEle[row].querySelectorAll("td")[column].style.visibility = 'hidden';
 
             //消されていたパネルを復活する===============================
             //何番目のtrか検出する
-            if (j<4) {
+            if (j < 4) {
                 var row = 0;
-            } else if (j<8) {
+            } else if (j < 8) {
                 var row = 1;
-            } else if (j<12) {
+            } else if (j < 12) {
                 var row = 2;
             } else {
                 var row = 3;
@@ -261,7 +284,7 @@
                 <div class="time_cont">
                     <span class="fas fa-hourglass-half"> Time : </span>
                     <span id="counter">0</span>
-                    <span> [s]</span>
+                    <span id="clr_s"> [s]</span>
                 </div>
             </div>
         </section>
