@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Slide Puzzle 15</title>
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -251,7 +251,7 @@
     <header>
         <div class="container">
             <div class="container-small">
-                <a href="../index.html" class="headA"><span class="fas fa-gamepad icon"></span> Slide Puzzle ⓯</a>
+                <a href="../index.php" class="headA"><span class="fas fa-gamepad icon"></span> Slide Puzzle ⓯</a>
 
                 <button type="button" class="headC">
                     <span class="fa fa-bars" title="MENU"></span>
@@ -261,13 +261,13 @@
             <nav class="top_menu">
                 <ul>
                     <li class="top">
-                        <a href="../index.html"><span class="fas fa-home"></span> Top</a>
+                        <a href="../index.php"><span class="fas fa-home"></span> Top</a>
                     </li>
                     <li class="games">
-                        <a href="../index.html"><span class="fas fa-gamepad"></span> Games</a>
+                        <a href="../index.php"><span class="fas fa-gamepad"></span> Games</a>
                     </li>
                     <li class="about">
-                        <a href="../index.html"><span class="fas fa-book"></span> About</a>
+                        <a href="../index.php"><span class="fas fa-book"></span> About</a>
                     </li>
                 </ul>
             </nav>
@@ -301,7 +301,7 @@
             <div class="container">
                 <a id="stbtn" onclick="stbtn_click()"><span class="fas fa-play"></span><br>START</a>
                 <a id="spbtn" onclick="spbtn_click()"><span class="fas fa-stop"></span><br>STOP</a>
-                <br><a href="../index.html"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
+                <br><a href="../index.php"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
             </div>
         </section>
     </main>
