@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Free Time games</title>
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/slick.css">
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
@@ -25,7 +25,7 @@
     <header>
         <div class="container">
             <div class="container-small">
-                <a href="index.html" class="headA"><span class="far fa-clock icon"></span> Free Time Games</a>
+                <a href="index.php" class="headA"><span class="far fa-clock icon"></span> Free Time Games</a>
 
                 <button type="button" class="headC">
                     <span class="fa fa-bars" title="MENU"></span>
@@ -35,7 +35,7 @@
             <nav class="top_menu">
                 <ul>
                     <li class="top">
-                        <a href="index.html"><span class="fas fa-home"></span> Top</a>
+                        <a href="index.php"><span class="fas fa-home"></span> Top</a>
                     </li>
                     <li class="games">
                         <a href=".listable"><span class="fas fa-gamepad"></span> Games</a>
@@ -50,8 +50,8 @@
 
     <section id="slider">
         <ul class="slick01">
-            <li><a href="./slidepuzzle/index.html"><img alt="slide_01" src="img/slidepuzzle15.PNG" /></a></li>
-            <li><img alt="slide_02" src="img/demo2.jpg" /></li>
+            <li><a href="./slidepuzzle/index.php"><img alt="slide_01" src="img/slidepuzzle15.PNG" /></a></li>
+            <li><a href="./flipcard/index.php"><img alt="slide_02" src="img/demo2.jpg" /></a></li>
             <li><img alt="slide_03" src="img/demo3.jpg" /></li>
         </ul>
     </section>
@@ -60,10 +60,10 @@
         <h2>Games</h2>
         <div class="allgames">
             <div>
-                <a href="./slidepuzzle/index.html"><p>15puzzle</p><img alt="slide_01" src="img/slidepuzzle15.PNG" /></a>
+                <a href="./slidepuzzle/index.php"><p>15puzzle</p><img alt="slide_01" src="img/slidepuzzle15.PNG" /></a>
             </div>
             <div>
-                <p>15puzzle</p><img alt="slide_02" src="img/demo2.jpg" />
+                <a href="./flipcard/index.php"><p>Flip Cards</p><img alt="slide_02" src="img/demo2.jpg" /></a>
             </div>
             <div>
                 <p>15puzzle</p><img alt="slide_03" src="img/demo3.jpg" />
