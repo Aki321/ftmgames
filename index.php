@@ -57,16 +57,20 @@
     </section>
 
     <div class="listable">
-        <h2>Games</h2>
-        <div class="allgames">
-            <div>
-                <a href="./slidepuzzle/index.php"><p>15puzzle</p><img alt="slide_01" src="img/slidepuzzle15.PNG" /></a>
+        <div class="container">
+            <div class="wrapIcon">
+                <span class="fas fa-gamepad icon"></span>
             </div>
-            <div>
-                <a href="./flipcard/index.php"><p>Flip Cards</p><img alt="slide_02" src="img/fripcads.PNG" /></a>
-            </div>
-            <div>
-                <p>15puzzle</p><img alt="slide_03" src="img/demo3.jpg" />
+            <div class="allgames">
+                <div>
+                    <a href="./slidepuzzle/index.php"><p>スライドパズル⓯</p><img alt="slide_01" src="img/slidepuzzle15.PNG" /></a>
+                </div>
+                <div>
+                    <a href="./flipcard/index.php"><p>神経衰弱</p><img alt="slide_02" src="img/fripcads.PNG" /></a>
+                </div>
+                <div>
+                    <p>15puzzle</p><img alt="slide_03" src="img/demo3.jpg" />
+                </div>
             </div>
         </div>
     </div>
