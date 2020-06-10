@@ -84,7 +84,10 @@
             </div>
             <div class="allblogs">
                 <div>
-                    <a href="./blog/beginnersguidejs.php"><p>JavaScript入門</p></a>
+                    <a href="./blog/beginnersguidejs.php"><p>JavaScript~入門~</p></a>
+                </div>
+                <div>
+                    <a href="./blog/jsArray.php"><p>JavaScript~配列~</p></a>
                 </div>
             </div>
         </div>
