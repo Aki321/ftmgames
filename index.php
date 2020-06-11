@@ -49,17 +49,19 @@
     </header>
 
     <section id="slider">
-        <ul class="slick01">
-            <li><a href="./slidepuzzle/index.php"><img alt="slide_01" src="img/slidepuzzle15.PNG" /></a></li>
-            <li><a href="./flipcard/index.php"><img alt="slide_02" src="img/fripcads.PNG" /></a></li>
-            <li><img alt="slide_03" src="img/demo3.jpg" /></li>
-        </ul>
+        <div class="container">
+            <ul class="slick01">
+                <li><a href="./slidepuzzle/index.php"><img alt="slide_01" src="img/slidepuzzle15.PNG" /></a></li>
+                <li><a href="./flipcard/index.php"><img alt="slide_02" src="img/fripcads.PNG" /></a></li>
+                <li><img alt="slide_03" src="img/demo3.jpg" /></li>
+            </ul>
+        </div>
     </section>
 
     <div class="listable">
         <div class="container">
             <div class="wrapIcon">
-                <span class="fas fa-gamepad icon"></span>
+                <span class="fas fa-gamepad icon"></span><span class="indexTxt"> Games</span>
             </div>
             <div class="allgames">
                 <div>
@@ -70,6 +72,22 @@
                 </div>
                 <div>
                     <p>15puzzle</p><img alt="slide_03" src="img/demo3.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blogs">
+        <div class="container">
+            <div class="wrapIcon">
+                <span class="fas fa-blog icon"></span><span class="indexTxt"> Blog</span>
+            </div>
+            <div class="allblogs">
+                <div>
+                    <a href="./blog/beginnersguidejs.php"><p>JavaScript~入門~</p></a>
+                </div>
+                <div>
+                    <a href="./blog/jsArray.php"><p>JavaScript~配列~</p></a>
                 </div>
             </div>
         </div>
