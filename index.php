@@ -89,6 +89,9 @@
                 <div>
                     <a href="./blog/jsArray.php"><p>JavaScript~配列~</p></a>
                 </div>
+                <div>
+                    <a href="./blog/jsforeach.php"><p>JavaScript~forEach~</p></a>
+                </div>
             </div>
         </div>
     </div>
