@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://kit.fontawesome.com/f3dff3c59a.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script>
         $(function () {
             $(".headC").click(function () {
@@ -49,13 +50,36 @@
     </header>
 
     <section id="slider">
-        <div class="container">
+            <!--
             <ul class="slick01">
                 <li><a href="./slidepuzzle/index.php"><img alt="slide_01" src="img/slidepuzzle15.PNG" /></a></li>
                 <li><a href="./flipcard/index.php"><img alt="slide_02" src="img/fripcads.PNG" /></a></li>
                 <li><img alt="slide_03" src="img/demo3.jpg" /></li>
             </ul>
-        </div>
+            -->
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img class="d-block w-30" src="img/slidepuzzle15.PNG" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-30" src="img/fripcads.PNG" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-30" src="img/demo3.jpg" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+
     </section>
 
     <div class="listable">
@@ -63,15 +87,15 @@
             <div class="wrapIcon">
                 <span class="fas fa-gamepad icon"></span><span class="indexTxt"> Games</span>
             </div>
-            <div class="allgames">
-                <div>
-                    <a href="./slidepuzzle/index.php"><p>スライドパズル⓯</p><img alt="slide_01" src="img/slidepuzzle15.PNG" /></a>
+            <div class="row">
+                <div class="p-1 col-12 col-sm-6 col-md-4">
+                    <a href="./slidepuzzle/index.php"><p>スライドパズル⓯</p><img class="mx-auto d-block img-fluid" alt="slide_01" src="img/slidepuzzle15.PNG" /></a>
                 </div>
-                <div>
-                    <a href="./flipcard/index.php"><p>神経衰弱</p><img alt="slide_02" src="img/fripcads.PNG" /></a>
+                <div class="p-1 col-12 col-sm-6 col-md-4">
+                    <a href="./flipcard/index.php"><p>神経衰弱</p><img class="mx-auto d-block img-fluid" alt="slide_02" src="img/fripcads.PNG" /></a>
                 </div>
-                <div>
-                    <p>15puzzle</p><img alt="slide_03" src="img/demo3.jpg" />
+                <div class="p-1 col-12 col-sm-6 col-md-4">
+                    <p>15puzzle</p><img class="mx-auto d-block img-fluid" alt="slide_03" src="img/demo3.jpg" />
                 </div>
             </div>
         </div>
@@ -91,6 +115,9 @@
                 </div>
                 <div>
                     <a href="./blog/jsforeach.php"><p>JavaScript~forEach~</p></a>
+                </div>
+                <div>
+                    <a href="./blog/jsfor.php"><p>JavaScript~for~</p></a>
                 </div>
             </div>
         </div>
@@ -140,8 +167,8 @@
 
 
 
-    <script type="text/javascript" src="js/slick.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <!--<script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>-->
 
 </body>
 
