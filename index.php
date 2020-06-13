@@ -58,27 +58,27 @@
             </ul>
             -->
 
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img class="d-block w-30" src="img/slidepuzzle15.PNG" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                <img class="d-block w-30" src="img/fripcads.PNG" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                <img class="d-block w-30" src="img/demo3.jpg" alt="Third slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            </div>
+            <div id="example-2" class="carousel slide" data-ride="carousel" style="width:400px">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/slidepuzzle15.PNG" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img src="img/slidepuzzle15.PNG" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img src="img/slidepuzzle15.PNG" alt="Third slide">
+    </div>
+    <a class="carousel-control-prev" href="#example-2" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#example-2" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 
     </section>
 
@@ -89,10 +89,10 @@
             </div>
             <div class="row">
                 <div class="p-1 col-12 col-sm-6 col-md-4">
-                    <a href="./slidepuzzle/index.php"><p>スライドパズル⓯</p><img class="mx-auto d-block img-fluid" alt="slide_01" src="img/slidepuzzle15.PNG" /></a>
+                    <a href="./games/slidepuzzle/index.php"><p>スライドパズル⓯</p><img class="mx-auto d-block img-fluid" alt="slide_01" src="img/slidepuzzle15.PNG" /></a>
                 </div>
                 <div class="p-1 col-12 col-sm-6 col-md-4">
-                    <a href="./flipcard/index.php"><p>神経衰弱</p><img class="mx-auto d-block img-fluid" alt="slide_02" src="img/fripcads.PNG" /></a>
+                    <a href="./games/flipcard/index.php"><p>神経衰弱</p><img class="mx-auto d-block img-fluid" alt="slide_02" src="img/fripcads.PNG" /></a>
                 </div>
                 <div class="p-1 col-12 col-sm-6 col-md-4">
                     <p>15puzzle</p><img class="mx-auto d-block img-fluid" alt="slide_03" src="img/demo3.jpg" />
