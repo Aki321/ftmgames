@@ -108,16 +108,19 @@
             </div>
             <div class="allblogs">
                 <div>
-                    <a href="./blog/beginnersguidejs.php"><p>JavaScript~入門~</p></a>
+                    <a href="./blog/jsBeginnersGuide.php"><p>JavaScript~入門~</p></a>
                 </div>
                 <div>
                     <a href="./blog/jsArray.php"><p>JavaScript~配列~</p></a>
                 </div>
                 <div>
-                    <a href="./blog/jsforeach.php"><p>JavaScript~forEach~</p></a>
+                    <a href="./blog/jsForeach.php"><p>JavaScript~forEach~</p></a>
                 </div>
                 <div>
-                    <a href="./blog/jsfor.php"><p>JavaScript~for~</p></a>
+                    <a href="./blog/jsFor.php"><p>JavaScript~for~</p></a>
+                </div>
+                <div>
+                    <a href="./blog/jsMap.php"><p>JavaScript~Map~</p></a>
                 </div>
             </div>
         </div>
