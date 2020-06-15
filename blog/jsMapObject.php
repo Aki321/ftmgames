@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <title>JavaScript~mapクラス~</title>
+    <title>JavaScript~Mapオブジェクト~</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://kit.fontawesome.com/f3dff3c59a.js" crossorigin="anonymous"></script>
@@ -34,41 +34,67 @@
         </div>
     </header>
     <main>
-        <h1>JavaScript~mapクラス~</h1>
-        既存の配列のすべての要素に対して、処理を行い、新たな要素を生成するMapを紹介します。
+        <h1>JavaScript~Mapオブジェクト~</h1>
+        本記事では、連想配列を処理するMapオブジェクトについてのサンプルをご紹介します。
 
-        <h2>配列の各要素を倍にするサンプル</h2>
-        下記のサンプルは、攻撃力という配列の各要素を倍にして、それらをバイキルトという配列に格納しています。
-        ※解かりやすくするために、あえて変数名に日本語を使っていますが、実際に変数名に日本語を使うケースは稀かと思います。
+        <h2>宣言・定義⇒要素出力サンプル</h2>
+
+        <h3>アロー関数を使った場合</h3>
             <pre>
             <code>
 
-    const 攻撃力 = [30, 70, 10];
+    let level = new Map();
 
-    const バイキルト = 攻撃力.map(x => x * 2);
+    level.set('主人公', 50);
+    level.set('ハッサン', 52);
+    level.set('ミレーユ', 48);
 
-    console.log(バイキルト);
+    level.forEach((value, key) => {
+        console.log(`${key}のレベルは、${value}です。`);
+    });
 
-    > Array [60, 140, 20]
+    > "主人公のレベルは、50です。"
+    > "ハッサンのレベルは、52です。"
+    > "ミレーユのレベルは、48です。"
+
+            </code>
+            </pre>
+
+            <h3>Function()を使った場合</h3>
+            <pre>
+            <code>
+
+    let level = new Map();
+
+    level.set('主人公', 50);
+    level.set('ハッサン', 52);
+    level.set('ミレーユ', 48);
+
+    level.forEach(function(value, key){
+        console.log(`${key}のレベルは、${value}です。`);
+    });
+
+    > "主人公のレベルは、50です。"
+    > "ハッサンのレベルは、52です。"
+    > "ミレーユのレベルは、48です。"
 
             </code>
             </pre>
 
 
-            <h2>インデックスを扱うサンプル</h2>
-            下記のように、Mapのコールバック関数に2つ目の引数(i)を指定すると、配列のインデックスを扱うことができます。
-            下記のサンプルは、配列の要素を2倍にしたものに、それぞれのインデックスの値を乗算した配列を生成した例になります。
+    <h2>特定のkeyの値を出力させるサンプル</h2>
             <pre>
             <code>
+    let level = new Map();
 
-    const 攻撃力 = [30, 70, 10];
+    level.set('主人公', 50);
+    level.set('ハッサン', 52);
+    level.set('ミレーユ', 48);
 
-    const バイキルトex = 攻撃力.map((x, i) => x * 2 * i);
+    console.log(level.get('主人公'));
 
-    console.log(バイキルトex);
+    > 50
 
-    > Array [0, 140, 40]
-    ⇒30*2*0=0 , 70*2*1=140, 10*2*2=40
 
             </code>
             </pre>

@@ -120,7 +120,10 @@
                     <a href="./blog/jsFor.php"><p>JavaScript~for~</p></a>
                 </div>
                 <div>
-                    <a href="./blog/jsMap.php"><p>JavaScript~Map~</p></a>
+                    <a href="./blog/jsMapMethod.php"><p>JavaScript~mapメソッド~</p></a>
+                </div>
+                <div>
+                    <a href="./blog/jsMapObject.php"><p>JavaScript~Mapオブジェクト~</p></a>
                 </div>
             </div>
         </div>
