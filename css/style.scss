@@ -240,20 +240,20 @@ footer {
   font-family: 'Montserrat', sans-serif;
 }
 
-.listable, .blogs {
+#listable, #blogs {
   width: 100%;
   background-color: #fafafa;
   padding-top: 20px;
 }
 
-.listable .container, .blogs .container {
+#listable .container, #blogs .container {
   max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
   padding-top: 10px;
 }
 
-.listable .icon, .blogs .icon {
+#listable .icon, #blogs .icon {
   display: inline-block;
   font-size: 32px;
   width: 2em;
@@ -271,7 +271,7 @@ footer {
   color: var(--dark-color);
 }
 
-.blogs {
+#blogs {
   .indexTxt {
     color: var(--main-color);
   }
@@ -287,7 +287,7 @@ footer {
 }
 
 @media (max-width: 500px) {
-  .blogs {
+  #blogs {
     p {
       color: black;
       font-size: 20px;
@@ -321,12 +321,12 @@ footer {
   }
 }
 
-.blogs {
+#blogs {
   background-color: var(--slide-back);
   padding-bottom: 50px;
 }
 
-.aboutcont {
+#aboutcont {
   .text {
     padding: 20px;
   }
@@ -354,7 +354,7 @@ footer {
 }
 
 @media (min-width: 768px) {
-  .aboutcont {
+  #aboutcont {
     .container {
       display: flex;
       max-width: 1000px;

@@ -250,20 +250,20 @@ footer .container {
   font-family: 'Montserrat', sans-serif;
 }
 
-.listable, .blogs {
+#listable, #blogs {
   width: 100%;
   background-color: #fafafa;
   padding-top: 20px;
 }
 
-.listable .container, .blogs .container {
+#listable .container, #blogs .container {
   max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
   padding-top: 10px;
 }
 
-.listable .icon, .blogs .icon {
+#listable .icon, #blogs .icon {
   display: inline-block;
   font-size: 32px;
   width: 2em;
@@ -282,22 +282,22 @@ footer .container {
   color: var(--dark-color);
 }
 
-.blogs .indexTxt {
+#blogs .indexTxt {
   color: var(--main-color);
 }
 
-.blogs .icon {
+#blogs .icon {
   background-color: var(--main-color);
   -webkit-box-shadow: 0px 0px 4px 2px #b33b30 inset;
           box-shadow: 0px 0px 4px 2px #b33b30 inset;
 }
 
-.blogs p {
+#blogs p {
   color: black;
 }
 
 @media (max-width: 500px) {
-  .blogs p {
+  #blogs p {
     color: black;
     font-size: 20px;
   }
@@ -332,22 +332,22 @@ footer .container {
   height: auto;
 }
 
-.blogs {
+#blogs {
   background-color: var(--slide-back);
   padding-bottom: 50px;
 }
 
-.aboutcont .text {
+#aboutcont .text {
   padding: 20px;
 }
 
-.aboutcont h2 {
+#aboutcont h2 {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 20px;
 }
 
-.aboutcont p {
+#aboutcont p {
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 14px;
@@ -355,7 +355,7 @@ footer .container {
   opacity: 0.8;
 }
 
-.aboutcont .photo {
+#aboutcont .photo {
   min-height: 200px;
   background-image: url(../img/882203_s.jpg);
   background-position: center;
@@ -363,7 +363,7 @@ footer .container {
 }
 
 @media (min-width: 768px) {
-  .aboutcont .container {
+  #aboutcont .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -371,12 +371,12 @@ footer .container {
     margin-left: auto;
     margin-right: auto;
   }
-  .aboutcont .photo {
+  #aboutcont .photo {
     -webkit-box-flex: 2;
         -ms-flex: 2;
             flex: 2;
   }
-  .aboutcont .text {
+  #aboutcont .text {
     -webkit-box-flex: 3;
         -ms-flex: 3;
             flex: 3;
