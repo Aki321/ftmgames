@@ -113,6 +113,7 @@ header {
 
 #slider {
   background-color: var(--slide-back);
+  padding: 10px;
 }
 
 #slider .container {
@@ -249,17 +250,10 @@ footer .container {
   font-family: 'Montserrat', sans-serif;
 }
 
-@media (max-width: 568px) {
-  #slider {
-    display: none;
-  }
-}
-
 .listable, .blogs {
   width: 100%;
   background-color: #fafafa;
   padding-top: 20px;
-  /*background-color: #e3e3e3;*/
 }
 
 .listable .container, .blogs .container {
@@ -298,8 +292,20 @@ footer .container {
           box-shadow: 0px 0px 4px 2px #b33b30 inset;
 }
 
+.blogs p {
+  color: black;
+}
+
+@media (max-width: 500px) {
+  .blogs p {
+    color: black;
+    font-size: 20px;
+  }
+}
+
 .wrapIcon {
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .allgames {
@@ -328,6 +334,7 @@ footer .container {
 
 .blogs {
   background-color: var(--slide-back);
+  padding-bottom: 50px;
 }
 
 .aboutcont .text {
@@ -377,15 +384,20 @@ footer .container {
   }
 }
 
-.slick01 img {
-  -webkit-box-shadow: 0 0 8px 3px #777;
-          box-shadow: 0 0 8px 3px #777;
-  position: relative;
+.slideImg {
+  margin-left: auto;
+  margin-right: auto;
   width: auto;
-  height: 600px;
+  height: 700px;
 }
 
-.slick-track {
-  padding: 10px;
+.fa-js-square {
+  font-size: 70px;
+}
+
+@media (max-width: 500px) {
+  .fa-js-square {
+    font-size: 50px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
