@@ -14,31 +14,33 @@ main {
   background-color: $mainColorLight;
 }
 
-h2 {
-  margin-top: 25px;
-  background: linear-gradient(transparent 70%, $mainColorLight 70%);
-}
-
-h3 {
-  position: relative;
-  padding: 0.25em 0;
-  margin-top: 20px;
-}
-h3:after {
-  content: "";
-  display: block;
-  height: 4px;
-  background: -webkit-linear-gradient(to right, $mainColorLight, transparent);
-  background: linear-gradient(to right, $mainColorLight, transparent);
-}
-
-.content{
-  background-color: $contentColor;
-  padding:10px;
-  margin-top:30px;
-  margin-bottom: 30px;
-}
-
-ul, pre{
-  margin-bottom: 0;
+main {
+  h2 {
+    margin-top: 25px;
+    background: linear-gradient(transparent 70%, $mainColorLight 70%);
+  }
+  
+  h3 {
+    position: relative;
+    padding: 0.25em 0;
+    margin-top: 20px;
+  }
+  h3:after {
+    content: "";
+    display: block;
+    height: 4px;
+    background: -webkit-linear-gradient(to right, $mainColorLight, transparent);
+    background: linear-gradient(to right, $mainColorLight, transparent);
+  }
+  
+  .content{
+    background-color: $contentColor;
+    padding:10px;
+    margin-top:30px;
+    margin-bottom: 30px;
+  }
+  
+  ul, pre{
+    margin-bottom: 0;
+  }
 }
