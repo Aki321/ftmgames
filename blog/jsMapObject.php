@@ -1,41 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <title>JavaScript入門(Hello World)</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://kit.fontawesome.com/f3dff3c59a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
+<?php include('../html/blogHead.html'); ?>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="../index.php"><span class="far fa-clock icon"></span> Free Time Games</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                    <a class="nav-link" href="../index.php"><span class="fas fa-home"></span></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="../index.php#listable"><span class="fas fa-gamepad"></span></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="../index.php#blogs"><span class="fas fa-blog icon"></span></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="../index.php#aboutcont"><span class="fas fa-book"></span></span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+<?php include('../html/blogHeader.html'); ?>
     <main>
     <div class="container">
         <h1>JavaScript~Mapオブジェクト~</h1>
+        <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/9 <i class="fas fa-wrench"></i>2020/6/17 <i class="fas fa-user-edit"></i>Aki</div>
         <p>本記事では、連想配列を処理するMapオブジェクトについてのサンプルをご紹介します。</p>
 
         <h2>宣言・定義⇒要素出力サンプル</h2>
@@ -92,7 +63,6 @@ console.log(level.get('主人公'));
             </pre></div>
     </div>
     </main>
-
-
+    <?php include('../html/commonFooter.html'); ?>
 </body>
 </html>

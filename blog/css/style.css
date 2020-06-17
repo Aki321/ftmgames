@@ -7,19 +7,19 @@ main {
   background-color: #ced3d8;
 }
 
-h2 {
+main h2 {
   margin-top: 25px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, transparent), color-stop(70%, #ced3d8));
   background: linear-gradient(transparent 70%, #ced3d8 70%);
 }
 
-h3 {
+main h3 {
   position: relative;
   padding: 0.25em 0;
   margin-top: 20px;
 }
 
-h3:after {
+main h3:after {
   content: "";
   display: block;
   height: 4px;
@@ -27,14 +27,14 @@ h3:after {
   background: linear-gradient(to right, #ced3d8, transparent);
 }
 
-.content {
+main .content {
   background-color: #f0f2f3;
   padding: 10px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-ul, pre {
+main ul, main pre {
   margin-bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */
