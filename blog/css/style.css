@@ -1,113 +1,40 @@
-@charset "UTF-8";
-/* 基本色 */
-:root {
-  --accent2-color:#BF8F73;
-  --accent-color:#BF0637;
-  --dark-color:#024873;
-  --back-color:#D9B9A7;
-  --main-color:#F25041;
-  --slide-back:#e3e3e3;
+main {
+  margin-top: 65px;
 }
 
-/* 基本設定：　ページ全体 */
-body {
-  margin: 0;
-  font-family: 'メイリオ', 'Hiragina Kaku Gothic Pro', sans-serif;
+.history {
+  color: white;
+  background-color: #ced3d8;
 }
 
-header {
-  top: 0;
-  left: 0;
-  width: 100%;
+h2 {
+  margin-top: 25px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, transparent), color-stop(70%, #ced3d8));
+  background: linear-gradient(transparent 70%, #ced3d8 70%);
 }
 
-.headA {
-  display: inline-block;
-  line-height: 70px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 24px;
-  text-decoration: none;
-  color: var(--main-color);
-  font-weight: 700;
+h3 {
+  position: relative;
+  padding: 0.25em 0;
+  margin-top: 20px;
 }
 
-.top_menu ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.top_menu a {
+h3:after {
+  content: "";
   display: block;
-  padding: 15px;
-  text-decoration: none;
-  color: #000;
-  font-size: 12px;
+  height: 4px;
+  background: -webkit-gradient(linear, left top, right top, from(#ced3d8), to(transparent));
+  background: linear-gradient(to right, #ced3d8, transparent);
 }
 
-.top_menu li :hover {
-  background-color: rgba(0, 0, 0, 0.3);
+.content {
+  background-color: #f0f2f3;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-@media (min-width: 768px) {
-  header .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .top_menu ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media (max-width: 767px) {
-  header .container-small {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .headC {
-    margin-right: 10px;
-    padding: 0;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 28px;
-    opacity: 0.5;
-    cursor: pointer;
-  }
-  .headC :hover {
-    opacity: 0.3;
-  }
-  .top_menu {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .headC {
-    display: none;
-  }
-  .top_menu {
-    display: block !important;
-  }
+ul, pre {
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */

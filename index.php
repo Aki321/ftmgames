@@ -6,8 +6,6 @@
     <title>Free Time games</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/slick.css">
-    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://kit.fontawesome.com/f3dff3c59a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -155,7 +153,7 @@
                 <div class="col-12 col-md-6">
                     <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
                         <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="./blog/jsObject.php"><p class="h4 mb-0">JavaScript ~Mapオブジェクト~</p></a></div>
+                        <div class="col-9 mt-auto mb-auto"><a href="./blog/jsMapObject.php"><p class="h4 mb-0">JavaScript ~Mapオブジェクト~</p></a></div>
                     </div>
                 </div>
             </div>

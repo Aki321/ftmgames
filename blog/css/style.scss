@@ -1,108 +1,44 @@
 @charset "UTF-8";
+$mainColor:#343a40;
+//$mainColor: #550505;
+$mainColorLight: lighten($mainColor, 60%);
+$contentColor: lighten($mainColor, 72%);
 
-/* 基本色 */
 
-:root {
-  --accent2-color:#BF8F73;
-  --accent-color:#BF0637;
-  --dark-color:#024873;
-  --back-color:#D9B9A7;
-  --main-color:#F25041;
-  --slide-back:#e3e3e3;
+main {
+  margin-top: 65px;
 }
 
-/* 基本設定：　ページ全体 */
-
-body {
-  margin: 0;
-  font-family: 'メイリオ', 'Hiragina Kaku Gothic Pro', sans-serif;
+.history{
+  color:white;
+  background-color: $mainColorLight;
 }
 
-header {
-  top: 0;
-  left: 0;
-  width: 100%;
+h2 {
+  margin-top: 25px;
+  background: linear-gradient(transparent 70%, $mainColorLight 70%);
 }
 
-.headA {
-  display: inline-block;
-  line-height: 70px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 24px;
-  text-decoration: none;
-  color: var(--main-color);
-  font-weight: 700;
+h3 {
+  position: relative;
+  padding: 0.25em 0;
+  margin-top: 20px;
+}
+h3:after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, $mainColorLight, transparent);
+  background: linear-gradient(to right, $mainColorLight, transparent);
 }
 
-.top_menu {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  a {
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-    color: #000;
-    font-size: 12px;
-  }
-
-  li :hover {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
+.content{
+  background-color: $contentColor;
+  padding:10px;
+  margin-top:30px;
+  margin-bottom: 30px;
 }
 
-@media (min-width: 768px) {
-  header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .top_menu ul {
-    display: flex;
-  }
-}
-
-@media (max-width: 767px) {
-  header .container-small {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .headC {
-    margin-right: 10px;
-    padding: 0;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 28px;
-    opacity: 0.5;
-    cursor: pointer;
-
-    :hover {
-      opacity: 0.3;
-    }
-  }
-
-  .top_menu {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .headC {
-    display: none;
-  }
-
-  .top_menu {
-    display: block !important;
-  }
+ul, pre{
+  margin-bottom: 0;
 }
