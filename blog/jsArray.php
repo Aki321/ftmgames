@@ -13,8 +13,8 @@
             <div class="content shadow-sm"><pre>
                 <code>
 let job = ["戦士", "武闘家", "僧侶" , "魔法使い", "踊り子"];
-console.log( job[0] ); // -->　戦士
-console.log( job[1] ); // --> 武闘家</code>
+console.log( job[0] ); // ->　戦士
+console.log( job[1] ); // -> 武闘家</code>
             </pre></div>
             <p>※配列の要素のインデックスは”０”からはじまる。</p>
 
@@ -31,7 +31,7 @@ console.log( job[1] ); // --> 武闘家</code>
             <code>
 let job = ["戦士", "武闘家"];
 job.push("バトルマスター");
-console.log( job ); // --> ["戦士", "武闘家", "バトルマスター"]</code>
+console.log( job ); // -> ["戦士", "武闘家", "バトルマスター"]</code>
         </pre></div>
 
         <h3>unshift</h3>
@@ -40,7 +40,7 @@ console.log( job ); // --> ["戦士", "武闘家", "バトルマスター"]</cod
             <code>
 let job = ["戦士", "武闘家"];
 job.unshift("羊使い");
-console.log( job ); // --> ["羊使い", "戦士", "武闘家"]</code>
+console.log( job ); // -> ["羊使い", "戦士", "武闘家"]</code>
         </pre></div>
 
 
@@ -50,29 +50,29 @@ console.log( job ); // --> ["羊使い", "戦士", "武闘家"]</code>
             <code>
 let job = ["戦士", "武闘家", "僧侶" , "魔法使い", "踊り子"];
 job.splice(2, 0, "海賊");
-console.log( job ); // --> ["戦士", "武闘家", "海賊", "僧侶" , "魔法使い", "踊り子"]</code>
+console.log( job ); // -> ["戦士", "武闘家", "海賊", "僧侶" , "魔法使い", "踊り子"]</code>
         </pre></div>
 
         <p>spliceの最初の引数で、何番目のインデックスに追加するか指定できます。この時インデックスは0から始まります。この例で言うと、戦士の前に海賊を追加したい場合は、最初の引数を0に設定します。
         spliceの2番目の引数は、要素を追加する場合は、0固定で問題ありません。</p>
 
         <h2>結合</h2>
-        <h3>配列と配列を結合する</h3>
+        <h3>concat:配列と配列を結合する</h3>
         <div class="content shadow-sm"><pre>
             <code>
 let jobA = ["戦士", "武闘家", "僧侶"];
 let jobB = ["賢者", "海賊", "勇者"];
-let jobC = job.contact(jobA, jobB);
-console.log( jobC ); // --> ["戦士", "武闘家", "僧侶" , "賢者", "海賊", "勇者"]</code>
+let jobC = jobA.concat(jobB);
+console.log( jobC ); // -> ["戦士", "武闘家", "僧侶" , "賢者", "海賊", "勇者"]</code>
         </pre></div>
 
-        <h3>配列の中身を結合して文字列にする</h3>
+        <h3>join:配列の中身を結合して文字列にする</h3>
 
         <div class="content shadow-sm"><pre>
             <code>
 let job = ["戦士", "武闘家", "僧侶"];
 let jobStr = job.join('');
-console.log( jobStr ); // --> '戦士武闘家僧侶'</code>
+console.log( jobStr ); // -> '戦士武闘家僧侶'</code>
         </pre></div>
 
         <p>joinの引数に任意の文字列を入れるとArrayの要素完にその文字列を挿入してくれます。</p>
@@ -80,16 +80,17 @@ console.log( jobStr ); // --> '戦士武闘家僧侶'</code>
             <code>
 let job = ["戦士", "武闘家", "僧侶"];
 let jobStr = job.join('スライム');
-console.log( jobStr ); // --> '戦士スライム武闘家スライム僧侶'</code>
+console.log( jobStr ); // -> '戦士スライム武闘家スライム僧侶'</code>
         </pre></div>
 
         <h2>要素数</h2>
-        <p>配列の中に要素数が何個あるか数える</p>
+        <p>length:配列の中に要素数が何個あるか数える</p>
         <div class="content shadow-sm"><pre>
             <code>
 let job = ["戦士", "武闘家", "僧侶"];
-let job数 = job.length;
-console.log( `あなたが選択できる職業の数は${job数}つです。` ); // --> あなたが選択できる職業は3つです。</code>
+let jobNum = job.length;
+console.log( `あなたが選択できる職業の数は${jobNum}つです。` ); 
+// -> あなたが選択できる職業は3つです。</code>
         </pre></div>
 
 
@@ -101,9 +102,9 @@ let job = ["戦士", "武闘家", "僧侶"];
 job.forEach(element => {
     console.log(element);
 })
-//戦士
-//武闘家
-//僧侶</code>
+// -> 戦士
+// -> 武闘家
+// -> 僧侶</code>
         </pre></div>
 
         <p>インデックスも取り出したい場合は、下記のようにします。</p>
@@ -113,9 +114,9 @@ let job = ["戦士", "武闘家", "僧侶"];
 job.forEach((element, index) => {
     console.log(`${index}番目の職業は${element}`);
 })
-//0番目の職業は戦士
-//1番目の職業は武闘家
-//2番目の職業は僧侶</code>
+// -> 0番目の職業は戦士
+// -> 1番目の職業は武闘家
+// -> 2番目の職業は僧侶</code>
         </pre></div>
 
         <h2>検索</h2>
@@ -123,17 +124,16 @@ job.forEach((element, index) => {
         <ul>
             <li>indexOf</li>
             <li>find</li>
-            <li>findIndex</li>
         </ul>
         <h3>indexOf</h3>
-        <p>indexOFは、配列の中を検索して、最初の該当した要素のインデックスを返します。無ければ-1を返します。</p>
+        <p>indexOfは、配列の中を検索して、最初の該当した要素のインデックスを返します。無ければ-1を返します。</p>
         <div class="content shadow-sm"><pre>
             <code>
 let job = ["戦士", "魔法使い", "魔法戦士"];
-console.log(job.indexOF("戦士")); // 0
-console.log(job.indexOF("魔法使い")); // 1
-console.log(job.indexOF("魔法戦士")); // 2
-console.log(job.indexOF("僧侶")); // -1</code>
+console.log(job.indexOf("戦士")); // -> 0
+console.log(job.indexOf("魔法使い")); // -> 1
+console.log(job.indexOf("魔法戦士")); // -> 2
+console.log(job.indexOf("僧侶")); // -> -1</code>
         </pre></div>
 
 
@@ -145,10 +145,10 @@ console.log(job.indexOF("僧侶")); // -1</code>
             <code>
 let job = ["戦士", "魔法使い", "魔法戦士"];
 let result = job.find(element => element === "戦士");
-console.log(result); // 戦士
+console.log(result); // -> 戦士
 
 result = job.find(element => element === "武闘家");
-console.log(result); // undefined</code>
+console.log(result); // -> undefined</code>
         </pre></div>
 
 
@@ -159,7 +159,7 @@ console.log(result); // undefined</code>
             <code>
 const level = [45, 99, 1, 100, 40, 200];
 level.sort();
-console.log(level); // Array [1, 100, 200, 40, 45, 99]</code>
+console.log(level); // -> [1, 100, 200, 40, 45, 99]</code>
         </pre></div>
 
         <p>上記を数字の小さい順にしたい場合は、ソートに引数に関数を指定する必要があります。
@@ -173,7 +173,7 @@ function compare(a, b) {
 }
 
 level.sort(compare);
-console.log(level);　// Array [1, 40, 45, 99, 100, 200]</code>
+console.log(level);　// -> [1, 40, 45, 99, 100, 200]</code>
         </pre></div>
 
         <p>上記のように、a値を基準にb値を比較して、bの順番を遅くしたい場合は、-1を返し、逆に順番を早めたい場合は、1を返します。順番を変えない場合は、0を返します。
@@ -182,11 +182,17 @@ console.log(level);　// Array [1, 40, 45, 99, 100, 200]</code>
 
         <h2>コピー(値渡し)</h2>
         <p>配列のコピーには様々な方法がありますが、今回はシンプルな記述ですむcontactのサンプルをご紹介します。</p>
+        <p>下記のサンプルプログラムでは、concatで配列をコピーした後に、コピー先のjobCopyの値を変更しても、コピー元のjobSrcの値は、この変更に影響を受けません。</p>
         <div class="content shadow-sm"><pre>
             <code>
-let jobA = ["戦士", "武闘家", "勇者"];
-let jobB = jobA.contact();
-console.log(jobB); // "戦士", "武闘家", "勇者"</code>
+let jobSrc = ["戦士", "武闘家", "勇者"];
+let jobCopy = jobSrc.concat();
+console.log(jobCopy); // -> "戦士", "武闘家", "勇者"
+
+jobCopy[1]='パラディン';
+
+console.log(jobSrc); // -> "戦士", "武闘家", "勇者"
+console.log(jobCopy); // -> "戦士", "パラディン", "勇者"</code>
         </pre></div>  
         </div>
     </main>

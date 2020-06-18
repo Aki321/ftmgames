@@ -41,7 +41,8 @@ $code =
 </head>
 
 <body>
-<script src="beginner.js"></script>        
+    <div id="content"></div>
+    <script src="beginner.js"></script>        
 </body>
 </html>';            
 
@@ -59,7 +60,7 @@ echo(htmlentities($code));
             <div class="content shadow-sm">
                 <pre><code><?php
 $code = 
-'document.write("Hello world");';
+'document.getElementById("content").innerHTML = "Hello World";';
 echo(htmlentities($code));
 ?>              </code></pre>
             </div>
