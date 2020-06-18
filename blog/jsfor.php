@@ -18,9 +18,9 @@ for (var i = 0; i < job.length; i++) {
     console.log(job[i]);
 }
 
-> "勇者"
-> "戦士"
-> "武闘家"</code>
+// -> "勇者"
+// -> "戦士"
+// -> "武闘家"</code>
             </pre></div>
 
 
@@ -30,13 +30,13 @@ for (var i = 0; i < job.length; i++) {
 const job = {name:'ハッサン', '職業':'武闘家', '武器':'はかいのてっきゅう', level:30};
 
 for (const property in job) {
-    console.log(`${property}の職業は、${job[property]}`);
+    console.log(`${property}：${job[property]}`);
 }
 
-> "name：ハッサン"
-> "職業：武闘家"
-> "武器：はかいのてっきゅう"
-> "level：30"</code>
+// -> "name：ハッサン"
+// -> "職業：武闘家"
+// -> "武器：はかいのてっきゅう"
+// -> "level：30"</code>
             </pre></div>
 
         <h2>for of</h2>
@@ -49,9 +49,9 @@ for (const elem of job) {
     console.log(elem);
 }
 
-> "勇者"
-> "戦士"
-> "武闘家"</code>
+// -> "勇者"
+// -> "戦士"
+// -> "武闘家"</code>
         </pre></div>
 
         <h2>break</h2>
@@ -67,8 +67,8 @@ for(var i = 0; i < job.length; i++){
     }
 }
 
-> "勇者"
-> "戦士"</code>
+// -> "勇者"
+// -> "戦士"</code>
         </pre></div>
         </div>
     </main>

@@ -17,9 +17,9 @@ const job = ['勇者', '戦士', '武闘家'];
 
 job.forEach(elem => console.log(elem));
 
-> "勇者"
-> "戦士"
-> "武闘家"</code>
+// -> "勇者"
+// -> "戦士"
+// -> "武闘家"</code>
             </pre></div>
 
 
@@ -32,9 +32,9 @@ job.forEach((elem, index) => {
     console.log(`[${index}]インデックスの要素は[${elem}]`);
 });
 
-> "[0]インデックスの要素は[勇者]"
-> "[1]インデックスの要素は[戦士]"
-> "[2]インデックスの要素は[武闘家]"</code>
+// -> "[0]インデックスの要素は[勇者]"
+// -> "[1]インデックスの要素は[戦士]"
+// -> "[2]インデックスの要素は[武闘家]"</code>
             </pre></div>
 
         <h2>Breakは扱えない</h2>
@@ -53,7 +53,7 @@ job.forEach(elem => {
     }
 });
 
-⇒Error: Illegal break statement</code>
+// -> Error: Illegal break statement</code>
         </pre></div>
 
         <h3>代替サンプル</h3>
@@ -69,8 +69,8 @@ for(var i = 0; i < job.length; i++){
     }
 }
 
-> "勇者"
-> "戦士"</code>
+// -> "勇者"
+// -> "戦士"</code>
         </pre></div>
 
         <h2>continueは扱えない</h2>
@@ -89,7 +89,7 @@ job.forEach(element => {
     console.log(element);
 });
 
-⇒Error: Illegal continue statement: no surrounding iteration statement</code>
+// -> Error: Illegal continue statement: no surrounding iteration statement</code>
         </pre></div>
 
         <h3>代替サンプル</h3>
@@ -105,8 +105,8 @@ job.forEach(element => {
     console.log(element);
 });
 
-> "勇者"
-> "武闘家"</code>
+// -> "勇者"
+// -> "武闘家"</code>
         </pre></div>
 
     <h2>連想配列</h2>
@@ -121,14 +121,14 @@ const job = {'主人公':'勇者', 'ハッサン':'戦士', 'ミレーユ':'武�
 const chara = Object.keys(job);
 console.log(chara);
 
-chara.forEach(chara => {
-    console.log(`${chara}の職業は[${job[chara]}]`)
+chara.forEach(elem => {
+    console.log(`${elem}の職業は[${job[elem]}]`)
 });
 
-> Array ["主人公", "ハッサン", "ミレーユ"]
-> "主人公の職業は[勇者]"
-> "ハッサンの職業は[戦士]"
-> "ミレーユの職業は[武闘家]"</code>
+// -> Array ["主人公", "ハッサン", "ミレーユ"]
+// -> "主人公の職業は[勇者]"
+// -> "ハッサンの職業は[戦士]"
+// -> "ミレーユの職業は[武闘家]"</code>
         </pre></div> 
     </div>
     </main>

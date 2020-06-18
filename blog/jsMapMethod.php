@@ -5,7 +5,7 @@
 <?php include('../html/blogHeader.html'); ?>
     <main>
     <div class="container">
-        <h1>JavaScript~mapクラス~</h1>
+        <h1>JavaScript~mapメソッド~</h1>
         <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/9 <i class="fas fa-wrench"></i>2020/6/17 <i class="fas fa-user-edit"></i>Aki</div>
         <p>既存の配列のすべての要素に対して、処理を行い、新たな要素を生成するMapを紹介します。</p>
 
@@ -20,7 +20,7 @@ const バイキルト = 攻撃力.map(x => x * 2);
 
 console.log(バイキルト);
 
-> Array [60, 140, 20]</code>
+// -> [60, 140, 20]</code>
             </pre></div>
 
 
@@ -35,8 +35,8 @@ const バイキルトex = 攻撃力.map((x, i) => x * 2 * i);
 
 console.log(バイキルトex);
 
-> Array [0, 140, 40]
-⇒30*2*0=0 , 70*2*1=140, 10*2*2=40</code>
+// -> [0, 140, 40]
+// ⇒30*2*0=0 , 70*2*1=140, 10*2*2=40</code>
             </pre></div>
     </div>
     </main>
