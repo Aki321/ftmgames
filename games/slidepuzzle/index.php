@@ -4,19 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>Slide Puzzle 15</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/f3dff3c59a.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.5.1.min.js"></script>
-    <script>
-        $(function () {
-            $(".headC").click(function () {
-                $(".top_menu").slideToggle();
-            });
-        });
-    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+
 
     <script>
         "use strict";
@@ -248,31 +241,30 @@
 </head>
 
 <body onload="init()">
-    <header>
-        <div class="container">
-            <div class="container-small">
-                <a href="../index.php" class="headA"><span class="fas fa-gamepad icon"></span> Slide Puzzle ⓯</a>
-
-                <button type="button" class="headC">
-                    <span class="fa fa-bars" title="MENU"></span>
-                </button>
-            </div>
-
-            <nav class="top_menu">
-                <ul>
-                    <li class="top">
-                        <a href="../index.php"><span class="fas fa-home"></span> Top</a>
-                    </li>
-                    <li class="games">
-                        <a href="../index.php"><span class="fas fa-gamepad"></span> Games</a>
-                    </li>
-                    <li class="about">
-                        <a href="../index.php"><span class="fas fa-book"></span> About</a>
-                    </li>
-                </ul>
-            </nav>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <a class="navbar-brand" href="../../top/index.php"><span class="fas fa-gamepad"></span> Slide Puzzle⓯</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="../../top/index.php"><span class="fas fa-home"></span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../top/index.php#listable"><span class="fas fa-gamepad"></span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../top/index.php#blogs"><span class="fas fa-blog icon"></span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../top/index.php#aboutcont"><span class="fas fa-book"></span></span></a>
+                </li>
+            </ul>
         </div>
-    </header>
+    </nav>
+</header>
     <main>
         <section id="info_time">
             <div class="container">
@@ -301,13 +293,13 @@
             <div class="container">
                 <a id="stbtn" onclick="stbtn_click()"><span class="fas fa-play"></span><br>START</a>
                 <a id="spbtn" onclick="spbtn_click()"><span class="fas fa-stop"></span><br>STOP</a>
-                <br><a href="../index.php"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
+                <br><a href="../../top/index.php"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
             </div>
         </section>
     </main>
     <footer>
 
     </footer>
+    <script src="../../js/lib/jquery-3.5.1.min.js"></script>
 </body>
-
 </html>
