@@ -293,4 +293,14 @@ header {
   .fa-js-square {
     font-size: 50px;
   }
+
+  .slideImg {
+    height: 600px;
+  }
+}
+
+@media (max-width: 450px) {
+  .slideImg {
+    height: 500px;
+  }
 }
