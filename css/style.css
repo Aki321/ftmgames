@@ -114,6 +114,7 @@ header {
 #slider {
   background-color: var(--slide-back);
   padding: 10px;
+  padding-top: 65px;
 }
 
 #slider .container {
