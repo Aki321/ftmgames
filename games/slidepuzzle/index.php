@@ -243,23 +243,23 @@
 <body onload="init()">
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <a class="navbar-brand" href="../top/index.php"><span class="fas fa-gamepad"></span> Slide Puzzle⓯</a>
+        <a class="navbar-brand" href="../../top/index.php"><span class="fas fa-gamepad"></span> Slide Puzzle⓯</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <a class="nav-link" href="../top/index.php"><span class="fas fa-home"></span></a>
+                <a class="nav-link" href="../../top/index.php"><span class="fas fa-home"></span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="../top/index.php#listable"><span class="fas fa-gamepad"></span></a>
+                <a class="nav-link" href="../../top/index.php#listable"><span class="fas fa-gamepad"></span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="../top/index.php#blogs"><span class="fas fa-blog icon"></span></a>
+                <a class="nav-link" href="../../top/index.php#blogs"><span class="fas fa-blog icon"></span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="../top/index.php#aboutcont"><span class="fas fa-book"></span></span></a>
+                <a class="nav-link" href="../../top/index.php#aboutcont"><span class="fas fa-book"></span></span></a>
                 </li>
             </ul>
         </div>
@@ -293,7 +293,7 @@
             <div class="container">
                 <a id="stbtn" onclick="stbtn_click()"><span class="fas fa-play"></span><br>START</a>
                 <a id="spbtn" onclick="spbtn_click()"><span class="fas fa-stop"></span><br>STOP</a>
-                <br><a href="../index.php"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
+                <br><a href="../../top/index.php"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
             </div>
         </section>
     </main>
