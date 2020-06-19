@@ -13,7 +13,7 @@
   text-shadow: 1px 1px 1px #3f2510;
 }
 
-header {
+.navbar {
   background-color: #F25041;
 }
 
@@ -28,7 +28,7 @@ header {
 #info_time .container {
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: 5px;
+  margin-top: 65px;
   text-align: center;
 }
 
@@ -177,5 +177,9 @@ header {
 
 #spbtn:hover {
   color: #BF0637;
+}
+
+table {
+  border-collapse: initial;
 }
 /*# sourceMappingURL=style.css.map */
