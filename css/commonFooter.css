@@ -5,14 +5,16 @@ footer {
 }
 
 footer .container {
-  padding: 40px 20px;
+  max-width: 1000px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.footA {
+.footSiteName {
   margin-bottom: 40px;
 }
 
-.footA h2 {
+.footSiteName h2 {
   margin-top: 0;
   margin-bottom: 10px;
   padding-right: 30px;
@@ -21,57 +23,29 @@ footer .container {
   letter-spacing: 0.2em;
 }
 
-.footA a {
+.footSiteName a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (min-width: 768px) {
-  footer .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .footA {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 40%;
-            flex: 0 0 40%;
-  }
-  .footB {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 60%;
-            flex: 0 0 60%;
-  }
-  .footC {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-  }
-}
-
-.footB div {
+.footContents div {
   margin-bottom: 20px;
 }
 
-.footB h3 {
+.footContents h3 {
   margin-top: 0;
   margin-bottom: 10px;
   border-bottom: solid 1px currentColor;
   font-size: 14px;
 }
 
-.footB ul {
+.footContents ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.footB a {
+.footContents a {
   display: block;
   padding: 5px;
   color: inherit;
@@ -79,27 +53,11 @@ footer .container {
   text-decoration: none;
 }
 
-.footB a:hover {
+.footContents a:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-@media (min-width: 768px) {
-  .footB {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .footB div {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
-  .footB div:not(:first-child) {
-    margin-left: 40px;
-  }
-}
-
-.footC {
+.footCopyRight {
   font-size: 12px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;

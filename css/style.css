@@ -19,6 +19,9 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  opacity: 0.9;
+  z-index: 10;
+  position: absolute;
 }
 
 .headA {
@@ -114,6 +117,7 @@ header {
 #slider {
   background-color: var(--slide-back);
   padding: 10px;
+  padding-top: 65px;
 }
 
 #slider .container {
@@ -292,6 +296,15 @@ header {
 @media (max-width: 500px) {
   .fa-js-square {
     font-size: 50px;
+  }
+  .slideImg {
+    height: 600px;
+  }
+}
+
+@media (max-width: 450px) {
+  .slideImg {
+    height: 500px;
   }
 }
 /*# sourceMappingURL=style.css.map */
