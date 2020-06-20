@@ -183,7 +183,7 @@ if (!isset($_SESSION["visited"])) {
                     <div class="blackBtn"><a id="stbtn" onclick="stbtn_click()">START</a></div>
                     <div class="redBtn"><a id="spbtn" onclick="spbtn_click()">STOP</a></div>
                 </div>
-                <a class="otherGm" href="../index.php"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
+                <a class="otherGm" href="../../top/index.php"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
             </section>
         </div>
     </main>
