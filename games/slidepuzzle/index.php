@@ -58,8 +58,8 @@
         //クッキーのチェック関数
         function checkCookie() {
             var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)puzzle_rec\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            console.log("現在のクッキーは" + document.cookie);
-            console.log('"' + cookieValue + '"');
+            //console.log("現在のクッキーは" + document.cookie);
+            //console.log('"' + cookieValue + '"');
             return cookieValue;
         }
 
@@ -120,7 +120,7 @@
         function click(e) {
             var i = e.srcElement.index;
             /*var deb = tiles[i-4].value;*/
-            console.log("クリックされました。iの値は" + i);
+            //console.log("クリックされました。iの値は" + i);
             /*console.log("条件式1の値は"+deb);*/
 
 
@@ -152,10 +152,10 @@
                     //最短記録をクッキーに登録する
                     //クリアタイムと今までの最速タイムを比較する
                     var cookieValue = checkCookie();
-                    console.log("クリアしました。cookieValueは" + cookieValue);
+                    //console.log("クリアしました。cookieValueは" + cookieValue);
 
-                    console.log("cookieValueは" + cookieValue);
-                    console.log("clearTimeは" + clearTime);
+                    //console.log("cookieValueは" + cookieValue);
+                    //console.log("clearTimeは" + clearTime);
 
                     if (cookieValue === "") {
                         document.cookie = "puzzle_rec=" + clearTime;
@@ -178,9 +178,9 @@
 
         function swap(i, j) {
             var tmp = tiles[i].value;
-            console.log("swap実行します。tmpの値は" + tmp);
-            console.log("iの値は" + i);
-            console.log("jの値は" + j);
+            //console.log("swap実行します。tmpの値は" + tmp);
+            //console.log("iの値は" + i);
+            //console.log("jの値は" + j);
             tiles[i].textContent = tiles[j].textContent;
             tiles[i].value = tiles[j].value;
             tiles[j].textContent = tmp;
@@ -205,12 +205,12 @@
                 var column = i % 4;
             }
 
-            console.log("rowの値は" + row);
-            console.log("columnの値は" + column);
+            //console.log("rowの値は" + row);
+            //console.log("columnの値は" + column);
 
 
             var trEle = document.querySelectorAll('#table tr');
-            console.log(trEle[row].querySelectorAll("td")[column]);
+            //console.log(trEle[row].querySelectorAll("td")[column]);
             trEle[row].querySelectorAll("td")[column].style.visibility = 'hidden';
 
             //消されていたパネルを復活する===============================
@@ -233,7 +233,7 @@
             }
 
             var trEle = document.querySelectorAll('#table tr');
-            console.log(trEle[row].querySelectorAll("td")[column]);
+            //console.log(trEle[row].querySelectorAll("td")[column]);
             trEle[row].querySelectorAll("td")[column].style.visibility = 'visible';
 
         }
