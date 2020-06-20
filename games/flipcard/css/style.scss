@@ -4,8 +4,13 @@
   color: white;
 }
 
-header {
+.navbar {
   background-color: rgb(131, 43, 2);
+  box-shadow: #14423b 4px 4px 4px;
+}
+
+table{
+  border-collapse: initial;
 }
 
 .headA {
@@ -21,6 +26,13 @@ main {
     margin-right: auto;
     padding-bottom: 10px;
   }
+
+  p {
+    text-align: center;
+    margin: 0;
+    font-size: 22px;
+    color: white;
+  }
 }
 
 h2 {
@@ -34,12 +46,18 @@ h2 {
   text-decoration-style: solid;
 }
 
-main p {
-  text-align: center;
-  margin: 0;
-  font-size: 22px;
-  color: white;
+@media (max-width: 500px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  main {
+    p {
+      font-size: 20px;
+    }
+  }
 }
+
 
 table {
   margin-left: auto;
@@ -102,17 +120,33 @@ td {
   }
 }
 
+#stbtn, #spbtn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: hand;
+  cursor: pointer;
+}
+
 @media (max-width: 450px) {
   td {
     &.back, &[class^="Front"] {
-      width: 72px;
-      height: 104px;
+      width: 70px;
+      height: 102px;
     }
   }
 
   header .container-small {
     height: 40px;
   }
+
+  #stbtn, #spbtn {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
 }
 
 #ctrl {
@@ -131,15 +165,7 @@ td {
   font-weight: 900;
 }
 
-#stbtn, #spbtn {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  cursor: hand;
-  cursor: pointer;
-}
+
 
 .redBtn {
   background-color: rgba(255, 0, 0, 0.7);
