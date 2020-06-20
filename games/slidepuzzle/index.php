@@ -120,7 +120,7 @@
         function click(e) {
             var i = e.srcElement.index;
             /*var deb = tiles[i-4].value;*/
-            //console.log("クリックされました。iの値は" + i);
+            console.log("クリックされました。iの値は" + i);
             /*console.log("条件式1の値は"+deb);*/
 
 
@@ -159,7 +159,7 @@
 
                     if (cookieValue === "") {
                         document.cookie = "puzzle_rec=" + clearTime;
-                    } else if (cookieValue > clearTime) {
+                    } else if (Number(cookieValue) > Number(clearTime)) {
                         document.cookie = "puzzle_rec=" + clearTime;
                         document.getElementById("fastest").textContent = "Record time : " + clearTime + " [sec]";
                         //console.log(document.cookie);
