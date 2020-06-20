@@ -13,6 +13,13 @@
   text-shadow: 1px 1px 1px #3f2510;
 }
 
+@media (max-width: 500px) {
+  .tile {
+    width: 64px;
+    height: 64px;
+  }
+}
+
 .navbar {
   background-color: #F25041;
 }
