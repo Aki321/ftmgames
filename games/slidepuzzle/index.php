@@ -58,8 +58,8 @@
         //クッキーのチェック関数
         function checkCookie() {
             var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)puzzle_rec\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            console.log("現在のクッキーは" + document.cookie);
-            console.log('"' + cookieValue + '"');
+            //console.log("現在のクッキーは" + document.cookie);
+            //console.log('"' + cookieValue + '"');
             return cookieValue;
         }
 
@@ -152,14 +152,14 @@
                     //最短記録をクッキーに登録する
                     //クリアタイムと今までの最速タイムを比較する
                     var cookieValue = checkCookie();
-                    console.log("クリアしました。cookieValueは" + cookieValue);
+                    //console.log("クリアしました。cookieValueは" + cookieValue);
 
-                    console.log("cookieValueは" + cookieValue);
-                    console.log("clearTimeは" + clearTime);
+                    //console.log("cookieValueは" + cookieValue);
+                    //console.log("clearTimeは" + clearTime);
 
                     if (cookieValue === "") {
                         document.cookie = "puzzle_rec=" + clearTime;
-                    } else if (cookieValue > clearTime) {
+                    } else if (Number(cookieValue) > Number(clearTime)) {
                         document.cookie = "puzzle_rec=" + clearTime;
                         document.getElementById("fastest").textContent = "Record time : " + clearTime + " [sec]";
                         //console.log(document.cookie);
@@ -178,9 +178,9 @@
 
         function swap(i, j) {
             var tmp = tiles[i].value;
-            console.log("swap実行します。tmpの値は" + tmp);
-            console.log("iの値は" + i);
-            console.log("jの値は" + j);
+            //console.log("swap実行します。tmpの値は" + tmp);
+            //console.log("iの値は" + i);
+            //console.log("jの値は" + j);
             tiles[i].textContent = tiles[j].textContent;
             tiles[i].value = tiles[j].value;
             tiles[j].textContent = tmp;
@@ -205,12 +205,12 @@
                 var column = i % 4;
             }
 
-            console.log("rowの値は" + row);
-            console.log("columnの値は" + column);
+            //console.log("rowの値は" + row);
+            //console.log("columnの値は" + column);
 
 
             var trEle = document.querySelectorAll('#table tr');
-            console.log(trEle[row].querySelectorAll("td")[column]);
+            //console.log(trEle[row].querySelectorAll("td")[column]);
             trEle[row].querySelectorAll("td")[column].style.visibility = 'hidden';
 
             //消されていたパネルを復活する===============================
@@ -233,7 +233,7 @@
             }
 
             var trEle = document.querySelectorAll('#table tr');
-            console.log(trEle[row].querySelectorAll("td")[column]);
+            //console.log(trEle[row].querySelectorAll("td")[column]);
             trEle[row].querySelectorAll("td")[column].style.visibility = 'visible';
 
         }
@@ -243,7 +243,7 @@
 <body onload="init()">
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <a class="navbar-brand" href="../../top/index.php"><span class="fas fa-gamepad"></span> Slide Puzzle⓯</a>
+        <a class="navbar-brand" href="./index.php"><span class="fas fa-gamepad"></span> Slide Puzzle⓯</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -301,5 +301,8 @@
 
     </footer>
     <script src="../../js/lib/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
 </html>
