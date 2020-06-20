@@ -73,5 +73,6 @@ for(var i = 0; i < job.length; i++){
         </div>
     </main>
     <?php include('../html/commonFooter.html'); ?>
+    <?php include('../html/blogSrcLinkOfBodyLast.html'); ?>
 </body>
 </html>

@@ -133,5 +133,6 @@ chara.forEach(elem => {
     </div>
     </main>
     <?php include('../html/commonFooter.html'); ?>
+    <?php include('../html/blogSrcLinkOfBodyLast.html'); ?>
 </body>
 </html>

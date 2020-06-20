@@ -64,5 +64,6 @@ console.log(level.get('主人公'));
     </div>
     </main>
     <?php include('../html/commonFooter.html'); ?>
+    <?php include('../html/blogSrcLinkOfBodyLast.html'); ?>
 </body>
 </html>
