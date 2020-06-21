@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f3dff3c59a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/commonFooter.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/commonFooter.css">
 </head>
 <body>
     <header>
@@ -41,10 +41,10 @@
             <!-- スライドさせる画像の設定 -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="../games/slidepuzzle/index.php"><img class="slideImg d-block" src="../img/slidepuzzle15.PNG" alt="第1スライド"></a>
+                    <a href="/games/slidepuzzle/index.php"><img class="slideImg d-block" src="/img/slidepuzzle15.PNG" alt="第1スライド"></a>
                 </div><!-- /.carousel-item -->
                 <div class="carousel-item">
-                    <a href="../games/flipcard/index.php"><img class="slideImg d-block" src="../img/fripcads.PNG" alt="第2スライド"></a>
+                    <a href="/games/flipcard/index.php"><img class="slideImg d-block" src="/img/fripcads.PNG" alt="第2スライド"></a>
                 </div><!-- /.carousel-item -->
             </div><!-- /.carousel-inner -->
             <!-- スライドコントロールの設定 -->
@@ -66,10 +66,10 @@
             </div>
             <div class="row">
                 <div class="p-4 col-12 col-sm-6 col-md-4">
-                    <a href="../games/slidepuzzle/index.php"><img class="shadow-sm p-3 mb-5 bg-white rounded mx-auto d-block img-fluid" alt="slide_01" src="../img/slidepuzzle15.PNG" /></a>
+                    <a href="/games/slidepuzzle/index.php"><img class="shadow-sm p-3 mb-5 bg-white rounded mx-auto d-block img-fluid" alt="slide_01" src="/img/slidepuzzle15.PNG" /></a>
                 </div>
                 <div class="p-4 col-12 col-sm-6 col-md-4">
-                    <a href="../games/flipcard/index.php"><img class="shadow-sm p-3 mb-5 bg-white rounded mx-auto d-block img-fluid" alt="slide_02" src="../img/fripcads.PNG" /></a>
+                    <a href="/games/flipcard/index.php"><img class="shadow-sm p-3 mb-5 bg-white rounded mx-auto d-block img-fluid" alt="slide_02" src="/img/fripcads.PNG" /></a>
                 </div>
             </div>
         </div>
@@ -84,37 +84,37 @@
                 <div class="col-12 col-md-6">
                     <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
                         <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="../blog/jsBeginnersGuide.php"><p class="h4 mb-0">JavaScript ~Hello World~</p></a></div>
+                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsBeginnersGuide.php"><p class="h4 mb-0">JavaScript ~Hello World~</p></a></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
                         <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="../blog/jsArray.php"><p class="h4 mb-0">JavaScript ~配列~</p></a></div>
+                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsArray.php"><p class="h4 mb-0">JavaScript ~配列~</p></a></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
                         <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="../blog/jsForeach.php"><p class="h4 mb-0">JavaScript ~forEach~</p></a></div>
+                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsForeach.php"><p class="h4 mb-0">JavaScript ~forEach~</p></a></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
                         <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="../blog/jsFor.php"><p class="h4 mb-0">JavaScript ~for~</p></a></div>
+                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsFor.php"><p class="h4 mb-0">JavaScript ~for~</p></a></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
                         <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="../blog/jsMapMethod.php"><p class="h4 mb-0">JavaScript ~mapメソッド~</p></a></div>
+                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsMapMethod.php"><p class="h4 mb-0">JavaScript ~mapメソッド~</p></a></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
                         <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="../blog/jsMapObject.php"><p class="h4 mb-0">JavaScript ~Mapオブジェクト~</p></a></div>
+                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsMapObject.php"><p class="h4 mb-0">JavaScript ~Mapオブジェクト~</p></a></div>
                     </div>
                 </div>
             </div>
@@ -130,10 +130,10 @@
             </div>
         </div>
     </section>
+    
+    <?php include($_SERVER['DOCUMENT_ROOT'] .'/html/commonFooter.html'); ?>
 
-    <?php include('../html/commonFooter.html'); ?>
-
-    <script src="../js/lib/jquery-3.5.1.min.js"></script>
+    <script src="/js/lib/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
