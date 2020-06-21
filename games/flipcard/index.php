@@ -140,23 +140,23 @@ if (!isset($_SESSION["visited"])) {
 <body onload="init()">
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <a class="navbar-brand" href="./index.php"><span class="fas fa-gamepad"></span> 神経衰弱♠</a>
+        <a class="navbar-brand" href="./"><span class="fas fa-gamepad"></span> 神経衰弱♠</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <a class="nav-link" href="../../top/index.php"><span class="fas fa-home"></span></a>
+                <a class="nav-link" href="../../"><span class="fas fa-home"></span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="../../top/index.php#listable"><span class="fas fa-gamepad"></span></a>
+                <a class="nav-link" href="../../#listable"><span class="fas fa-gamepad"></span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="../../top/index.php#blogs"><span class="fas fa-blog icon"></span></a>
+                <a class="nav-link" href="../../#blogs"><span class="fas fa-blog icon"></span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="../../top/index.php#aboutcont"><span class="fas fa-book"></span></span></a>
+                <a class="nav-link" href="../../#aboutcont"><span class="fas fa-book"></span></span></a>
                 </li>
             </ul>
         </div>
@@ -183,7 +183,7 @@ if (!isset($_SESSION["visited"])) {
                     <div class="blackBtn"><a id="stbtn" onclick="stbtn_click()">START</a></div>
                     <div class="redBtn"><a id="spbtn" onclick="spbtn_click()">STOP</a></div>
                 </div>
-                <a class="otherGm" href="../../top/index.php"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
+                <a class="otherGm" href="../../"><button><span class="fas fa-play-circle"> 他のゲームで遊ぶ</span></button></a>
             </section>
         </div>
     </main>
