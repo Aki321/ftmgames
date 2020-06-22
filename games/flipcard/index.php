@@ -57,9 +57,14 @@ if (!isset($_SESSION["visited"])) {
                 for (var j = 0; j < num_col; j++) {
                     var td = document.createElement("td");
                     td.className = "back Front" + cards[i * num_row + j];
-                    td.number = cards[i * num_row + j];
+                    //td.number = cards[i * num_row + j];
                     td.onclick = flip;
                     tr.appendChild(td);
+
+                    var div = document.createElement("div");
+                    div.className = "mask" + cards[i * num_row + j];
+                    div.style.display = "none";
+                    td.appendChild(div);
                 }
                 table.appendChild(tr);
             }
@@ -97,16 +102,38 @@ if (!isset($_SESSION["visited"])) {
                 return;
             }
 
-            var num = src.number;
-            src.className = "Front" + num;
-            src.textContent = num;
+            //var num = src.number;
+            //src.className = "Front" + num;
+            //src.textContent = num;
+
+            let clickClassName = src.className;
+            let classSplit = clickClassName.split(" ");
+            let frontClass = classSplit[1];
+            let frontNum = Number(frontClass.replace("Front",""));
+            src.className = "Front" + frontNum.toString(10);
+
+            //var div = document.createElement("div");
+            //div.className = "mask" + frontNum.toString(10);
+            //div.style.display = "none";
+            //src.appendChild(div);
+            
 
             if (prevCard == null) {
                 prevCard = src;
                 return;
             }
 
-            if (prevCard.number == num) {
+            let clickClassNamePre= prevCard.className;
+            console.log(clickClassNamePre);
+            let frontNumPre = Number(clickClassNamePre.replace("Front",""));           
+
+            if (frontNumPre == frontNum) {
+                let mask = document.getElementsByClassName(`mask${frontNum.toString(10)}`);
+                console.log(`mask${frontNum.toString(10)}`)
+                console.log(mask.length);
+                mask[0].style.display = "block";
+                mask[1].style.display = "block";
+
                 if (++score == score_max) {
                     clearInterval(timer);
 
@@ -125,10 +152,8 @@ if (!isset($_SESSION["visited"])) {
 
             } else {
                 flipTimer = setTimeout(function() {
-                    src.className = "back";
-                    src.textContent = "";
-                    prevCard.className = "back";
-                    prevCard.textContent = "";
+                    src.className = "back Front" + frontNum.toString(10);
+                    prevCard.className = "back Front" + frontNumPre.toString(10);
                     prevCard = null;
                     flipTimer = NaN;
                 }, 1000);
