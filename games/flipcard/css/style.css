@@ -11,6 +11,23 @@
 
 table {
   border-collapse: initial;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table td {
+  position: relative;
+}
+
+table td div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 140px;
+  background-color: #14423b;
+  opacity: 0.7;
+  border-radius: 4px;
 }
 
 .headA {
@@ -57,19 +74,12 @@ h2 {
   }
 }
 
-table {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 td.back, td[class^="Front"] {
   color: transparent;
   width: 100px;
   height: 140px;
-  border: 1px solid white;
   border-radius: 5px;
   text-align: center;
-  font-size: 36px;
   background-color: white;
   -webkit-box-shadow: #14423b 5px 5px 5px;
           box-shadow: #14423b 5px 5px 5px;
@@ -130,7 +140,7 @@ td.back {
 @media (max-width: 450px) {
   td.back, td[class^="Front"] {
     width: 70px;
-    height: 102px;
+    height: 98px;
   }
   header .container-small {
     height: 40px;
@@ -138,6 +148,10 @@ td.back {
   #stbtn, #spbtn {
     padding-top: 0;
     padding-bottom: 0;
+  }
+  table td div {
+    width: 70px;
+    height: 98px;
   }
 }
 
