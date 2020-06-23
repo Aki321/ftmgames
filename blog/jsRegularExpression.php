@@ -24,7 +24,7 @@ let magic = ["メラ", "メラミ", "メラゾーマ", "ギラ", "ベギラマ",
             <code>
 let magic = ["メラ", "メラミ", "メラゾーマ", "ギラ", "ベギラマ", "ベギラゴン"];
 magic.forEach(elem => {
-    if (elem == "メラ" | elem == "メラミ" | elem == "メラゾーマ") {
+    if (elem == "メラ" || elem == "メラミ" || elem == "メラゾーマ") {
         console.log(elem);
     }
 });
