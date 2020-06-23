@@ -117,6 +117,12 @@
                         <div class="col-9 mt-auto mb-auto"><a href="/blog/jsMapObject.php"><p class="h4 mb-0">JavaScript ~Mapオブジェクト~</p></a></div>
                     </div>
                 </div>
+                <div class="col-12 col-md-6">
+                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
+                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
+                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsRegularExpression.php"><p class="h4 mb-0">JavaScript ~正規表現~</p></a></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
