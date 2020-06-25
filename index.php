@@ -129,6 +129,12 @@
                         <div class="col-9 mt-auto mb-auto"><a href="/blog/jsReplace.php"><p class="h4 mb-0">JavaScript ~replace~</p></a></div>
                     </div>
                 </div>
+                <div class="col-12 col-md-6">
+                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
+                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
+                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsAjax.php"><p class="h4 mb-0">JavaScript ~Ajax~</p></a></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
