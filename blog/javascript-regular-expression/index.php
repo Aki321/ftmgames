@@ -1,11 +1,17 @@
+<?php
+$title = "JavaScript 正規表現";
+?>
 <!DOCTYPE html>
 <html lang="ja">
-<?php include('../html/blogHead.html'); ?>
+<head>
+<title><?php echo $title; ?></title>
+<?php include('../../html/blogHead.html'); ?>
+</head>
 <body>
-<?php include('../html/blogHeader.html'); ?>
+<?php include('../../html/blogHeader.html'); ?>
     <main>
     <div class="container">
-        <h1>JavaScript ~正規表現~</h1>
+        <h1><?php echo $title; ?></h1>
         <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/23 <i class="fas fa-wrench"></i>- <i class="fas fa-user-edit"></i>Aki</div>
         <p>本記事では、JavaScriptの正規表現について、ご紹介します。</p>
 
@@ -58,7 +64,7 @@ magic.forEach(elem => {
     </div>
 
     </main>
-    <?php include('../html/commonFooter.html'); ?>
-    <?php include('../html/blogSrcLinkOfBodyLast.html'); ?>
+    <?php include('../../html/commonFooter.html'); ?>
+    <?php include('../../html/blogSrcLinkOfBodyLast.html'); ?>
 </body>
 </html>

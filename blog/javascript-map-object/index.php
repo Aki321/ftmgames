@@ -1,11 +1,17 @@
+<?php
+$title = "JavaScript Mapオブジェクト";
+?>
 <!DOCTYPE html>
 <html lang="ja">
-<?php include('../html/blogHead.html'); ?>
+<head>
+<title><?php echo $title; ?></title>
+<?php include('../../html/blogHead.html'); ?>
+</head>
 <body>
-<?php include('../html/blogHeader.html'); ?>
+<?php include('../../html/blogHeader.html'); ?>
     <main>
     <div class="container">
-        <h1>JavaScript~Mapオブジェクト~</h1>
+        <h1><?php echo $title; ?></h1>
         <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/9 <i class="fas fa-wrench"></i>2020/6/17 <i class="fas fa-user-edit"></i>Aki</div>
         <p>本記事では、連想配列を処理するMapオブジェクトについてのサンプルをご紹介します。</p>
 
@@ -63,7 +69,7 @@ console.log(level.get('主人公'));
             </pre></div>
     </div>
     </main>
-    <?php include('../html/commonFooter.html'); ?>
-    <?php include('../html/blogSrcLinkOfBodyLast.html'); ?>
+    <?php include('../../html/commonFooter.html'); ?>
+    <?php include('../../html/blogSrcLinkOfBodyLast.html'); ?>
 </body>
 </html>

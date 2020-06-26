@@ -1,0 +1,12 @@
+.wrap_fade, .wrap_move{
+    background-color: #343a40;
+    padding: 20px;
+}
+
+#fadein, #fadeout, #laterally, #vertically{
+    margin:15px;
+    background-color: white;
+    padding:15px;
+    cursor: pointer;
+    position: relative;
+}

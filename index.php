@@ -81,63 +81,37 @@
                 <span class="fas fa-blog icon"></span><span class="indexTxt"> Blog</span>
             </div>
             <div class="allblogs row mt-5">
-                <div class="col-12 col-md-6">
-                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
-                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsBeginnersGuide.php"><p class="h4 mb-0">JavaScript ~Hello World~</p></a></div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
-                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsArray.php"><p class="h4 mb-0">JavaScript ~配列~</p></a></div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
-                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsForeach.php"><p class="h4 mb-0">JavaScript ~forEach~</p></a></div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
-                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsFor.php"><p class="h4 mb-0">JavaScript ~for~</p></a></div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
-                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsMapMethod.php"><p class="h4 mb-0">JavaScript ~mapメソッド~</p></a></div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
-                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsMapObject.php"><p class="h4 mb-0">JavaScript ~Mapオブジェクト~</p></a></div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
-                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsRegularExpression.php"><p class="h4 mb-0">JavaScript ~正規表現~</p></a></div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
-                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsReplace.php"><p class="h4 mb-0">JavaScript ~replace~</p></a></div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
-                        <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-                        <div class="col-9 mt-auto mb-auto"><a href="/blog/jsAjax.php"><p class="h4 mb-0">JavaScript ~Ajax~</p></a></div>
-                    </div>
-                </div>
-            </div>
+<?php
+$bloglist = glob('./blog/*');
+foreach($bloglist as $content){
+    if ($content!="./blog/css"){
+        $filename = $content.'/index.php';
+        $file = fopen($filename, 'r');
+        while (!feof($file)) {
+            $row = fgets($file);
+            
+            if(preg_match('/\$title = "(.+)"/',$row, $match)){
+                $title = $match[1];
+                break;
+            }
+        }
+        fclose($file);
+
+?>
+    <div class="col-12 col-md-6">
+        <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
+            <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
+            <div class="col-9 mt-auto mb-auto"><a href="<?php echo $content; ?>"><p class="h4 mb-0"><?php echo $title; $title=""; ?></p></a></div>
         </div>
     </div>
+<?php
+    }
+}
+?>
+
+            </div><!--class=allblogs-->
+        </div><!--class=container-->
+    </div><!--id=blogs-->
 
     <section id="aboutcont">
         <div class="container">

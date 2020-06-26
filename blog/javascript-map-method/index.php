@@ -1,11 +1,17 @@
+<?php
+$title = "JavaScript mapメソッド";
+?>
 <!DOCTYPE html>
 <html lang="ja">
-<?php include('../html/blogHead.html'); ?>
+<head>
+<title><?php echo $title; ?></title>
+<?php include('../../html/blogHead.html'); ?>
+</head>
 <body>
-<?php include('../html/blogHeader.html'); ?>
+<?php include('../../html/blogHeader.html'); ?>
     <main>
     <div class="container">
-        <h1>JavaScript~mapメソッド~</h1>
+        <h1><?php echo $title; ?></h1>
         <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/9 <i class="fas fa-wrench"></i>2020/6/17 <i class="fas fa-user-edit"></i>Aki</div>
         <p>既存の配列のすべての要素に対して、処理を行い、新たな要素を生成するMapを紹介します。</p>
 
@@ -40,7 +46,7 @@ console.log(バイキルトex);
             </pre></div>
     </div>
     </main>
-    <?php include('../html/commonFooter.html'); ?>
-    <?php include('../html/blogSrcLinkOfBodyLast.html'); ?>
+    <?php include('../../html/commonFooter.html'); ?>
+    <?php include('../../html/blogSrcLinkOfBodyLast.html'); ?>
 </body>
 </html>
