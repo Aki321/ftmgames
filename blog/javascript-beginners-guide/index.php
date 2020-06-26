@@ -1,11 +1,17 @@
+<?php
+$title = "JavaScript Hello World";
+?>
 <!DOCTYPE html>
 <html lang="ja">
-<?php include('../html/blogHead.html'); ?>
+<head>
+<title><?php echo $title; ?></title>
+<?php include('../../html/blogHead.html'); ?>
+</head>
 <body>
-<?php include('../html/blogHeader.html'); ?>
+<?php include('../../html/blogHeader.html'); ?>
     <main>
         <div class="container">
-            <h1>JavaScript入門(Hello World)</h1>
+            <h1><?php echo $title; ?></h1>
             <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/9 <i class="fas fa-wrench"></i>2020/6/17 <i class="fas fa-user-edit"></i>Aki</div>
             <p>これからJavaScriptの勉強を始めるかたを対象にしています。では、早速はじめていきましょう。</p>
 
@@ -69,7 +75,7 @@ echo(htmlentities($code));
             <p>これは、あなたが書いたJavaScriptのプログラムによって出力されています。<p>Hello worldの部分を変更して、別の言葉を出力してみてください。</p>
         </div>
     </main>
-    <?php include('../html/commonFooter.html'); ?>
-    <?php include('../html/blogSrcLinkOfBodyLast.html'); ?>
+    <?php include('../../html/commonFooter.html'); ?>
+    <?php include('../../html/blogSrcLinkOfBodyLast.html'); ?>
 </body>
 </html>
