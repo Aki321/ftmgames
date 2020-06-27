@@ -14,7 +14,13 @@ $title = "JavaScript Window";
     <main>
     <div class="container">
         <h1><?php echo $title; ?></h1>
-        <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/27 <i class="fas fa-wrench"></i>- <i class="fas fa-user-edit"></i>Aki</div>
+        <div class="history text-right rounded p-1 mb-3 shadow-sm">
+            <i class="fas fa-pencil-alt"></i>
+            <time itemprop="dataPublished">2020/06/27</time> 
+            <i class="fas fa-wrench"></i>
+            <time itemprop="dataModified">-</time> 
+            <i class="fas fa-user-edit"></i>Aki 
+        </div>
         <p>本記事では、JavaScriptでWindowを制御するサンプルプログラムを、ご紹介します。</p>
 
         <h2>Windowのサイズを取得するサンプル</h2>
