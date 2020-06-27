@@ -95,13 +95,37 @@ foreach($bloglist as $content){
                 break;
             }
         }
+
+        while (!feof($file)) {
+            $row = fgets($file);
+            
+            if(preg_match('/<time itemprop="datePublished">([0-9]{4}\/[0-9]{2}\/[0-9]{2})/',$row, $match)){
+                $datePub = $match[1];
+                break;
+            }
+        }
+
+        //while (!feof($file)) {
+        //    $row = fgets($file);
+        //    
+        //    if(preg_match('/<time itemprop="dateModified">(.+)</',$row, $match)){
+        //        $dateMod = $match[1];
+        //        break;
+        //    }
+        //}
         fclose($file);
 
 ?>
     <div class="col-12 col-md-6">
         <div class="row col-12 bg-white rounded p-3 pl-2 ml-auto mr-auto shadow-sm mb-2">
             <div class="p-2 col-3"><i class="fab fa-js-square"></i></div>
-            <div class="col-9 mt-auto mb-auto"><a href="<?php echo $content; ?>"><p class="h4 mb-0"><?php echo $title; $title=""; ?></p></a></div>
+            <div class="col-9 mt-auto mb-auto pr-0 pl-0">
+                <div class="col-12 pl-0 pr-0"><a href="<?php echo $content; ?>"><p class="h4 mb-0"><?php echo $title; $title=""; ?></p></a></div>
+                <div class="col-12 mt-3 dateInfo pr-0">
+                    <i class="fas fa-pencil-alt"></i><?php echo $datePub; ?>
+                    <!--<i class="fas fa-wrench"></i>--><?php //echo $dateMod; ?>
+                </div>
+            </div>
         </div>
     </div>
 <?php

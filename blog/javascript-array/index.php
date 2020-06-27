@@ -13,7 +13,13 @@ $title = "JavaScript 配列";
     <main>
         <div class="container">
         <h1><?php echo $title; ?></h1>
-        <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/9 <i class="fas fa-wrench"></i>2020/6/17 <i class="fas fa-user-edit"></i>Aki</div>
+        <div class="history text-right rounded p-1 mb-3 shadow-sm">
+            <i class="fas fa-pencil-alt"></i>
+            <time itemprop="datePublished">2020/06/10</time> 
+            <i class="fas fa-wrench"></i>
+            <time itemprop="dateModified">-</time> 
+            <i class="fas fa-user-edit"></i>Aki 
+        </div>
         <p>今回はJavaScriptの配列についてご紹介します。</p>
 
         <h2>宣言・定義</h2>

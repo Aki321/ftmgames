@@ -2,6 +2,10 @@
 
 /* 基本色 */
 
+$mainColor: #343a40;
+$mainColorLight: lighten($mainColor, 60%);
+$contentColor: lighten($mainColor, 72%);
+
 :root {
   --accent2-color:#BF8F73;
   --accent-color:#BF0637;
@@ -15,7 +19,6 @@
 
 body {
   margin: 0;
-  font-family: 'メイリオ', 'Hiragina Kaku Gothic Pro', sans-serif;
 }
 
 header {
@@ -189,6 +192,13 @@ header {
   p {
     color: black;
   }
+}
+
+.dateInfo{
+  //background-color: $mainColorLight;
+  color: $mainColor;
+  border-bottom: dotted 2px $mainColorLight;
+  text-align: right;
 }
 
 @media (max-width: 500px) {

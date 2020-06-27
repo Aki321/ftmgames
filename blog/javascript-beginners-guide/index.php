@@ -12,7 +12,13 @@ $title = "JavaScript Hello World";
     <main>
         <div class="container">
             <h1><?php echo $title; ?></h1>
-            <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/9 <i class="fas fa-wrench"></i>2020/6/17 <i class="fas fa-user-edit"></i>Aki</div>
+            <div class="history text-right rounded p-1 mb-3 shadow-sm">
+                <i class="fas fa-pencil-alt"></i>
+                <time itemprop="datePublished">2020/06/13</time> 
+                <i class="fas fa-wrench"></i>
+                <time itemprop="dateModified">-</time> 
+                <i class="fas fa-user-edit"></i>Aki 
+            </div>
             <p>これからJavaScriptの勉強を始めるかたを対象にしています。では、早速はじめていきましょう。</p>
 
             <h2>WEBブラウザに表示させる</h2>

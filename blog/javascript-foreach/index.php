@@ -12,7 +12,13 @@ $title = "JavaScript foreach";
     <main>
     <div class="container">
         <h1><?php echo $title; ?></h1>
-        <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/9 <i class="fas fa-wrench"></i>2020/6/17 <i class="fas fa-user-edit"></i>Aki</div>
+        <div class="history text-right rounded p-1 mb-3 shadow-sm">
+            <i class="fas fa-pencil-alt"></i>
+            <time itemprop="datePublished">2020/06/12</time> 
+            <i class="fas fa-wrench"></i>
+            <time itemprop="dateModified">-</time> 
+            <i class="fas fa-user-edit"></i>Aki 
+        </div>
         <p>今回は配列を簡単にループ処理することができるforEachをご紹介します。</p>
 
         <h2>要素を取り出すサンプル</h2>

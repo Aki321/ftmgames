@@ -12,7 +12,13 @@ $title = "JavaScript mapメソッド";
     <main>
     <div class="container">
         <h1><?php echo $title; ?></h1>
-        <div class="history text-right rounded p-1 mb-3 shadow-sm"><i class="fas fa-pencil-alt"></i>2020/6/9 <i class="fas fa-wrench"></i>2020/6/17 <i class="fas fa-user-edit"></i>Aki</div>
+        <div class="history text-right rounded p-1 mb-3 shadow-sm">
+            <i class="fas fa-pencil-alt"></i>
+            <time itemprop="datePublished">2020/06/14</time> 
+            <i class="fas fa-wrench"></i>
+            <time itemprop="dateModified">-</time> 
+            <i class="fas fa-user-edit"></i>Aki 
+        </div>
         <p>既存の配列のすべての要素に対して、処理を行い、新たな要素を生成するMapを紹介します。</p>
 
         <h2>配列の各要素を倍にするサンプル</h2>
