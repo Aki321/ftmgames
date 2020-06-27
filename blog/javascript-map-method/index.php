@@ -14,9 +14,9 @@ $title = "JavaScript mapメソッド";
         <h1><?php echo $title; ?></h1>
         <div class="history text-right rounded p-1 mb-3 shadow-sm">
             <i class="fas fa-pencil-alt"></i>
-            <time itemprop="dataPublished">2020/06/14</time> 
+            <time itemprop="datePublished">2020/06/14</time> 
             <i class="fas fa-wrench"></i>
-            <time itemprop="dataModified">-</time> 
+            <time itemprop="dateModified">-</time> 
             <i class="fas fa-user-edit"></i>Aki 
         </div>
         <p>既存の配列のすべての要素に対して、処理を行い、新たな要素を生成するMapを紹介します。</p>

@@ -14,9 +14,9 @@ $title = "JavaScript 正規表現";
         <h1><?php echo $title; ?></h1>
         <div class="history text-right rounded p-1 mb-3 shadow-sm">
             <i class="fas fa-pencil-alt"></i>
-            <time itemprop="dataPublished">2020/06/23</time> 
+            <time itemprop="datePublished">2020/06/23</time> 
             <i class="fas fa-wrench"></i>
-            <time itemprop="dataModified">-</time> 
+            <time itemprop="dateModified">-</time> 
             <i class="fas fa-user-edit"></i>Aki 
         </div>
         <p>本記事では、JavaScriptの正規表現について、ご紹介します。</p>

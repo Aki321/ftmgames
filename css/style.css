@@ -193,6 +193,12 @@ header {
   color: black;
 }
 
+.dateInfo {
+  color: #343a40;
+  border-bottom: dotted 2px #ced3d8;
+  text-align: right;
+}
+
 @media (max-width: 500px) {
   #blogs p {
     color: black;
