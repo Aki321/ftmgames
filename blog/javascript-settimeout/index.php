@@ -18,12 +18,12 @@ $title = "JavaScript setTimeout";
             <i class="fas fa-pencil-alt"></i>
             <time itemprop="datePublished">2020/06/28</time> 
             <i class="fas fa-wrench"></i>
-            <time itemprop="dateModified">-</time> 
+            <time itemprop="dateModified">2020/06/28</time> 
             <i class="fas fa-user-edit"></i>Aki 
         </div>
         <p>本記事では、JavaScriptでsetTimeoutのサンプルプログラムを、ご紹介します。</p>
 
-        <h2>Windowのサイズを取得するサンプル</h2>
+        <h2>setTimeoutを使って、クリックした５秒後に、そのHTMLの要素を消すサンプル</h2>
         <h3>demo</h3>
         <div class=wrap_demo>
             <div id="moveBox"></div>
