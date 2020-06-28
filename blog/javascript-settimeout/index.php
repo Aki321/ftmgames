@@ -28,25 +28,59 @@ $title = "JavaScript setTimeout";
         <div class=wrap_demo>
             <div id="moveBox"></div>
         </div>
-        <p>白いボックスをクリックしてみてください。ボックスの色が赤くなり、５秒後にボックスが消えます。</p>
-        <p>赤くなったボックスを、クリックするとボックスが消えるのを防ぐことが出来ます。</p>
+        <p></p>
+        <ul>
+            <li>白いボックスをクリックしてみてください。ボックスの色が赤くなり、５秒後にボックスが消えます。</li>
+            <li>赤くなったボックスを、クリックするとボックスが消えるのを防ぐことが出来ます。</li>
+        </ul>
 
         <h3>サンプル</h3>
         <div class="content shadow-sm"><pre>
             <code>
-onload = winSizeMon; //『１』
-onresize = winSizeMon; //『２』
+const distance = 160;
+const moveBox = document.getElementById('moveBox');
+const boxStyle = getComputedStyle(moveBox);
+let timerId;
 
-function winSizeMon() { // 『３』
-    const output = document.getElementById("windowSize");
-    output.textContent = `縦: ${innerHeight}px / 横: ${innerWidth}px`;
-}</code>
+function boxmover(){ //『１』
+    document.getElementById('moveBox').animate([
+    { top:          '0px', left:          '0px' },
+    { top:`${distance}px`, left:          '0px' },
+    { top:`${distance}px`, left:`${distance}px` },
+    { top:          '0px', left:`${distance}px` },
+    { top:          '0px', left:          '0px' }
+    ], {
+        duration: 15000,
+        iterations: Infinity
+    });
+}
+
+
+moveBox.onclick = function(){ //『２』
+    if(boxStyle.backgroundColor.match(/rgb\(255, 255, 255\)/)){ //『３』
+        moveBox.style.backgroundColor="red";
+        timerId = setTimeout(erace, 5000);
+
+    } else { //『４』
+        console.log(`赤色なので白色に変更します`);
+        moveBox.style.backgroundColor="white";
+        clearTimeout(timerId);
+    }
+}
+
+function erace() { //『５』
+    moveBox.style.display="none";
+}
+
+onload = boxmover;</code>
             </pre></div>
 
             <ul>
-                <li>『１』本記事を読み込んだ時に、winSizeMon関数が１回実行されます。</li>
-                <li>『２』Windowサイズが変更される度に、winSizeMon関数が実行されます。</li>
-                <li>『３』縦横のサイズを取得して、HTML上に、その数値を出力する関数です</li>
+                <li>『１』Boxを動かしている関数です。</li>
+                <li>『２』Boxがクリックされた時に呼び出される関数です。</li>
+                <li>『３』Boxの色が白の時に、赤色に変更して、Boxを５秒後に消すタイマーをセットしています。</li>
+                <li>『４』Boxの色が赤の時に、白色に変更して、Boxを５秒後に消すタイマーをクリアしています。</li>
+                <li>『５』５秒後に呼ばれるBoxを消す処理を行う関数です。</li>
             </ul>
 
      </div>
