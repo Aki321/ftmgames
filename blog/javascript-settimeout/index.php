@@ -23,7 +23,7 @@ $title = "JavaScript setTimeout";
         </div>
         <p>本記事では、JavaScriptでsetTimeoutのサンプルプログラムを、ご紹介します。</p>
 
-        <h2>setTimeoutを使って、クリックした５秒後に、そのHTMLの要素を消すサンプル</h2>
+        <h2>クリックした５秒後に、そのHTMLの要素を消すサンプル</h2>
         <h3>demo</h3>
         <div class=wrap_demo>
             <div id="moveBox"></div>
