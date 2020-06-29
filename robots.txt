@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://ftmgames.net/sitemap.xml
