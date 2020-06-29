@@ -238,6 +238,7 @@
 
         }
     </script>
+    <?php include($_SERVER['DOCUMENT_ROOT'] .'/html/gtag.html');?>
 </head>
 
 <body onload="init()">
