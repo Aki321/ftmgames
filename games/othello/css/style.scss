@@ -1,0 +1,35 @@
+@charset "UTF-8";
+$tableBack: #218576;
+$waku: #854e21;
+
+.navbar{
+  background-color: black;
+}
+
+main{
+  margin-top: 60px;
+}
+
+#board{
+  background-color: $tableBack;
+  line-height: 0;
+  border: 10px solid $waku;
+}
+
+td.cell{
+  background-color: $tableBack;
+  width: 60px;
+  height: 60px;
+  margin: 2px;
+  font-size: 50px;
+  text-align: center;
+  font-family: auto;
+  border: 1px solid black;
+}
+
+td.black{
+  color: black;
+}
+td.white{
+  color: white;
+}
