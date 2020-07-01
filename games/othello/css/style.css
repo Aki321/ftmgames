@@ -10,6 +10,8 @@ main {
   background-color: #218576;
   line-height: 0;
   border: 10px solid #854e21;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 td.cell {
@@ -29,5 +31,69 @@ td.black {
 
 td.white {
   color: white;
+}
+
+.wrapInfo {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapInfo .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #e6e6e6;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-right: 10px;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+  width: 210px;
+  /*
+    .cellNum{
+      background-color: lighten(black, 90%);
+      width: $infoCellSize/2 + $infoSize*4;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+    */
+}
+
+.wrapInfo .info .cellBlack, .wrapInfo .info .cellWhite {
+  display: inline-block;
+  line-height: 70px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px black solid;
+  text-align: center;
+  background-color: black;
+  color: white;
+  position: relative;
+}
+
+.wrapInfo .info .cellWhite {
+  background-color: white;
+  color: black;
+}
+
+.wrapInfo .info #numWhite, .wrapInfo .info #numBlack {
+  font-size: 45px;
+  color: black;
+}
+
+.wrapInfo .info .unit {
+  padding-right: 5px;
+  line-height: 70px;
 }
 /*# sourceMappingURL=style.css.map */

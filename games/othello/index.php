@@ -53,11 +53,19 @@ if (!isset($_SESSION["visited"])) {
 
     <main>
         <div class="container">
-            <h2>
-                黒(あなた):<span id="numBlack"></span>枚
-                白(AI):<span id="numWhite"></span>枚
-            </h2>
             <table id="board"></table>
+            <div class="wrapInfo">
+                <div class="info">
+                    <div class="cellBlack">あなた</div>
+                    <span id="numBlack"></span>
+                    <span class="unit">枚</span>
+                </div>
+                <div class="info">
+                    <div class="cellWhite">COM</div>
+                    <span id="numWhite"></span>
+                    <span class="unit">枚</span>
+                </div>
+            </div>
             <h2 id="message"></h2>
         </div>
     </main>

@@ -1,6 +1,8 @@
 @charset "UTF-8";
 $tableBack: #218576;
 $waku: #854e21;
+$infoSize: 45px;
+$infoCellSize: 70px;
 
 .navbar{
   background-color: black;
@@ -14,6 +16,8 @@ main{
   background-color: $tableBack;
   line-height: 0;
   border: 10px solid $waku;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 td.cell{
@@ -33,3 +37,64 @@ td.black{
 td.white{
   color: white;
 }
+
+.wrapInfo{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+
+  .info{
+    display: flex;
+    justify-content: space-between;
+    background-color: lighten(black, 90%);
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-right: 10px;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    width: $infoCellSize*3;
+
+    .cellBlack, .cellWhite{
+      display: inline-block;
+      line-height: $infoCellSize;
+      width: $infoCellSize;
+      height: $infoCellSize;
+      border-radius: 50%;
+      border: 2px black solid;
+      text-align: center;
+      background-color: black;
+      color: white;
+      position: relative;
+      //left: $infoCellSize/2;
+    }
+    
+    .cellWhite{
+      background-color: white;
+      color: black;
+    }
+
+    #numWhite, #numBlack{
+      font-size: $infoSize;
+      //padding-left: $infoSize + $infoCellSize/2;
+      //padding-right: $infoSize/2;
+      color: black;
+    }
+
+    .unit{
+      padding-right: 5px;
+      line-height: $infoCellSize;
+    }
+
+    /*
+    .cellNum{
+      background-color: lighten(black, 90%);
+      width: $infoCellSize/2 + $infoSize*4;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+    */
+  }
+}
+
