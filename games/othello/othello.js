@@ -1,6 +1,6 @@
 "use strict"
 
-var WeightData = [
+const WeightData = [
     [ 30, -12,  0, -1, -1,  0, -12,  30],
     [-12, -15, -3, -3, -3, -3, -15, -12],
     [  0,  -3,  0, -1, -1,  0,  -3,   0],
@@ -11,26 +11,31 @@ var WeightData = [
     [ 30, -12,  0, -1, -1,  0, -12,  30],
 ];
 
-var BLACK = 1, WHITE = 2;
-var data=[];
-var myTurn = false;
+const BLACK = 1;
+const WHITE = 2;
+let data=[];
+let myTurn = false;
 
 
 //初期化関数
 function init(){
-    var b = document.getElementById("board");
+    const board = document.getElementById("board");
+    let tr = document.createElement("tr");
+    let td = document.createElement("td");
 
-    for(var i=0; i<8; i++){
-        var tr = document.createElement("tr");
+    for(let i=0; i<8; i++){
+        tr = document.createElement("tr");
         data[i] = [0,0,0,0,0,0,0,0];
-        for(var j=0; j<8; j++){
-            var td = document.createElement("td");
+        console.log(`data[${i}]${data[i]}`);
+
+        for(let j=0; j<8; j++){
+            td = document.createElement("td");
             td.className = "cell";
             td.id = "cell" + i + j;
             td.onclick = clicked;
             tr.appendChild(td);
         }
-        b.appendChild(tr);
+        board.appendChild(tr);
     }
 
     put(3,3, BLACK);
@@ -41,9 +46,11 @@ function init(){
 }
 
 function update(){
-    var numWhite = 0, numBlack = 0;
-    for(var x=0; x<8; x++){
-        for(var y=0; y<8; y++){
+    let numWhite = 0;
+    let numBlack = 0;
+
+    for(let x=0; x<8; x++){
+        for(let y=0; y<8; y++){
             if(data[x][y]==WHITE){
                 numWhite++;
             }
@@ -55,11 +62,11 @@ function update(){
     document.getElementById("numBlack").textContent = numBlack;
     document.getElementById("numWhite").textContent = numWhite;
 
-    var blackFlip = canFlip(BLACK);
-    var whiteFlip = canFlip(WHITE);
+    let blackFlip = canFlip(BLACK);
+    let whiteFlip = canFlip(WHITE);
 
     if(numWhite + numBlack == 64 || (!blackFlip&&!whiteFlip)){
-        showMessage("ゲームオーバー")
+        showMessage("ゲームオーバー");
     } else if (!blackFlip){
         showMessage("黒スキップ");
         myTurn = false;
@@ -83,11 +90,13 @@ function showMessage(str){
 }
 
 //盤上のセルクリック時のコールバック関数
-function clicked(e){
+function clicked(elem){
     if(!myTurn){
         return;
     }
-    var id = e.target.id;
+
+    const id = elem.target.id;
+    console.log(`セルがクリックされました。idは${id}`);
 
     var i = parseInt(id.charAt(4));
     var j = parseInt(id.charAt(5));
