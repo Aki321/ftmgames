@@ -16,8 +16,6 @@ const WHITE = 2;
 let data=[];
 let myTurn = false;
 
-
-//初期化関数
 function init(){
     const board = document.getElementById("board");
     let tr = document.createElement("tr");
@@ -62,8 +60,8 @@ function update(){
     document.getElementById("numBlack").textContent = numBlack;
     document.getElementById("numWhite").textContent = numWhite;
 
-    let blackFlip = canFlip(BLACK);
-    let whiteFlip = canFlip(WHITE);
+    const blackFlip = canFlip(BLACK);
+    const whiteFlip = canFlip(WHITE);
 
     if(numWhite + numBlack == 64 || (!blackFlip&&!whiteFlip)){
         showMessage("ゲームオーバー");
@@ -78,7 +76,7 @@ function update(){
     }
 
     if(!myTurn){
-        setTimeout(think, 1000);
+        setTimeout(think, 2000);
     }
 }
 
@@ -89,7 +87,6 @@ function showMessage(str){
     }, 2000);
 }
 
-//盤上のセルクリック時のコールバック関数
 function clicked(elem){
     if(!myTurn){
         return;
@@ -98,35 +95,37 @@ function clicked(elem){
     const id = elem.target.id;
     console.log(`セルがクリックされました。idは${id}`);
 
-    var i = parseInt(id.charAt(4));
-    var j = parseInt(id.charAt(5));
+    const row = parseInt(id.charAt(4));
+    const column = parseInt(id.charAt(5));
+    console.log(`${id.charAt(4)}`);
+    console.log(`${id.charAt(5)}`);
 
-    var flipped = getFlipCells(i, j, BLACK);
+    const flipped = getFlipCells(row, column, BLACK);
+    console.log(`flipped${flipped}`);
 
     if(flipped.length > 0){
-        for(var k=0; k<flipped.length; k++){
-            put(flipped[k][0], flipped[k][1],BLACK);
+        for(let i=0; i<flipped.length; i++){
+            put(flipped[i][0], flipped[i][1], BLACK);
         }
-        put(i,j,BLACK);
+        put(row, column, BLACK);
         update();
     }
 }
 
-//(i,j)にcolor色の駒を置く
-function put(i,j, color){
-    var c = document.getElementById("cell"+i+j);
-    c.textContent = "●";
-    c.className = "cell " + (color==BLACK?"black":"white");
-    data[i][j]=color;
+function put(row, column, color){
+    const elem = document.getElementById("cell"+row+column);
+    elem.textContent = "●";
+    elem.className = "cell " + (color==BLACK?"black":"white");
+    data[row][column]=color;
 }
 
-//コンピューター思考関数
 function think(){
-    var highScore = -1000;
-    var px = -1, py = -1;
+    let highScore = -1000;
+    let px = -1;
+    let py = -1;
 
-    for(var x=0; x<8; x++){
-        for(var y=0; y<8; y++){
+    for(let x=0; x<8; x++){
+        for(let y=0; y<8; y++){
             var tmpData = copyData();
             var flipped = getFlipCells(x,y,WHITE);
             if(flipped.length>0){
@@ -158,20 +157,19 @@ function think(){
     update();
 }
 
-//重みづけ計算
 function calcWeightData(tmpData){
-    var score = 0;
-    for(var x=0; x<8; x++){
-        for(var y=0; y<8; y++){
+    let score = 0;
+    for(let x=0; x<8; x++){
+        for(let y=0; y<8; y++){
             if(tmpData[x][y]==WHITE){
                 score+=WeightData[x][y];
             }
         }
     }
+    console.log(`スコア計算したました。結果は${score}`);
     return score;
 }
 
-//駒テーブルデータをコピー
 function copyData(){
     var tmpData = [];
     for(var x=0; x<8; x++){
@@ -183,7 +181,6 @@ function copyData(){
     return tmpData;
 }
 
-//挟める駒があるか？
 function canFlip(color){
     for(var x=0; x<8; x++){
         for(var y=0; y<8; y++){
@@ -196,7 +193,6 @@ function canFlip(color){
     return false;
 }
 
-//(i,j)に駒を置いた時に駒を挟めるか？
 function getFlipCells(i,j,color){
     if(data[i][j]==BLACK||data[i][j]==WHITE){
         return [];
