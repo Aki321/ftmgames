@@ -17,6 +17,13 @@ let data=[];
 let myTurn = false;
 
 function init(){
+
+    const divOff = document.getElementsByClassName("off");
+    for(let k=0; k<divOff.length; k++){
+        divOff[k].onclick = settingPut;
+    }
+
+
     const board = document.getElementById("board");
     let tr = document.createElement("tr");
     let td = document.createElement("td");
@@ -24,7 +31,7 @@ function init(){
     for(let i=0; i<8; i++){
         tr = document.createElement("tr");
         data[i] = [0,0,0,0,0,0,0,0];
-        console.log(`data[${i}]${data[i]}`);
+        //console.log(`data[${i}]${data[i]}`);
 
         for(let j=0; j<8; j++){
             td = document.createElement("td");
@@ -93,15 +100,15 @@ function clicked(elem){
     }
 
     const id = elem.target.id;
-    console.log(`セルがクリックされました。idは${id}`);
+    //console.log(`セルがクリックされました。idは${id}`);
 
     const row = parseInt(id.charAt(4));
     const column = parseInt(id.charAt(5));
-    console.log(`${id.charAt(4)}`);
-    console.log(`${id.charAt(5)}`);
+    //console.log(`${id.charAt(4)}`);
+    //console.log(`${id.charAt(5)}`);
 
     const flipped = getFlipCells(row, column, BLACK);
-    console.log(`flipped${flipped}`);
+    //console.log(`flipped${flipped}`);
 
     if(flipped.length > 0){
         for(let i=0; i<flipped.length; i++){
@@ -166,7 +173,7 @@ function calcWeightData(tmpData){
             }
         }
     }
-    console.log(`スコア計算したました。結果は${score}`);
+    //console.log(`スコア計算したました。結果は${score}`);
     return score;
 }
 
@@ -201,7 +208,7 @@ function getFlipCells(i,j,color){
     const dirs = [[-1,-1],[0,-1],[1,-1],[-1,0],[1,0],[-1,1],[0,1],[1,1]];
     let result = [];
 
-    console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`);
+    //console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`);
     for(var p=0; p<dirs.length; p++){
         var flipped = getFlipCellsOneDir(i,j,dirs[p][0],dirs[p][1],color);
         result = result.concat(flipped);
@@ -213,8 +220,8 @@ function getFlipCellsOneDir(i,j,dx,dy,color){
     var x = i + dx;
     var y = j + dy;
     var flipped = [];
-    console.log(`i:${i}/j:${j}/dx:${dx}/dy:${dy}/color:${color}`);
-    dataOut();
+    //console.log(`i:${i}/j:${j}/dx:${dx}/dy:${dy}/color:${color}`);
+    //dataOut();
     
 
     if(x<0||y<0||x>7||y>7||data[x][y]==color||data[x][y]==0){
@@ -240,4 +247,42 @@ function dataOut(){
     for(let i=0; i<8; i++){
         console.log(`data[${i}]${data[i]}`);
     }
+}
+
+function openCfg(){
+    const div = document.getElementById("config");
+    div.style.display = "block";
+}
+
+function closeCfg(){
+    const div = document.getElementById("config");
+    div.style.display = "none";
+}
+
+function settingPut(elem){
+    const id = elem.target.id;
+    const div = document.getElementById(id);
+    div.className = "on";
+    div.onclick = "";
+
+    if(id=="parallel"){
+        document.getElementById("closs").className = "off";
+        document.getElementById("closs").onclick = settingPut;
+    } else {
+        document.getElementById("parallel").className = "off";
+        document.getElementById("parallel").onclick = settingPut;
+    }
+
+}
+
+function settingOpp(elem){
+
+}
+
+function settingLv(elem){
+
+}
+
+function settingTurn(elem){
+
 }

@@ -21,7 +21,6 @@ if (!isset($_SESSION["visited"])) {
     <script src="https://kit.fontawesome.com/f3dff3c59a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="othello.js"></script>
     <?php include($_SERVER['DOCUMENT_ROOT'] .'/html/gtag.html');?>
 </head>
 
@@ -35,16 +34,7 @@ if (!isset($_SESSION["visited"])) {
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <a class="nav-link" href="../../"><span class="fas fa-home"></span></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="../../#listable"><span class="fas fa-gamepad"></span></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="../../#blogs"><span class="fas fa-blog icon"></span></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="../../#aboutcont"><span class="fas fa-book"></span></span></a>
+                    <a class="nav-link" onclick="openCfg()"><span class="fas fa-cog"></span></a>
                 </li>
             </ul>
         </div>
@@ -52,6 +42,43 @@ if (!isset($_SESSION["visited"])) {
 </header>
 
     <main>
+        <div id="config">
+            <div class="container">
+                <div class="navCfg"><a onclick="closeCfg()"><span class="fas fa-times-circle"></span></a></div>
+                <div class="wrapSet">
+                    <div class="wrap_item">
+                        <h3><i class="fas fa-chess-board"></i> 初期配置</h3>
+                        <div class="wrap_choise initialPut">
+                            <div id="parallel" class="off">平行</div>
+                            <div id="closs" class="on">クロス</div>
+                        </div>
+                    </div>
+                    <div class="wrap_item">
+                        <h3><i class="fas fa-user-friends"></i> 対戦相手</h3>
+                        <div class="wrap_choise opponent">
+                            <div id="com" class="on">COM</div>
+                            <div id="human" class="off">人間</div>
+                        </div>
+                    </div>
+                    <div class="wrap_item">
+                        <h3><i class="fab fa-connectdevelop"></i> COMレベル</h3>
+                        <div class="wrap_choise level">
+                            <div id="random" class="off">いい加減なCOM</div>
+                            <div id="lvOne" class="on">Lv.1</div>
+                            <div id="lvTwo" class="off">Lv.2</div>
+                            <div id="lvThree" class="off">Lv.3</div>
+                        </div>
+                    </div>
+                    <div class="wrap_item">
+                        <h3><i class="fas fa-people-arrows"></i> 番手</h3>
+                        <div class="wrap_choise turn">
+                            <div id="first" class="on">先手</div>
+                            <div id="second" class="off">後手</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <table id="board"></table>
             <div class="wrapInfo">
@@ -71,6 +98,7 @@ if (!isset($_SESSION["visited"])) {
     </main>
     <footer>
     </footer>
+    <script type="text/javascript" src="othello.js"></script>
     <script src="../../js/lib/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
