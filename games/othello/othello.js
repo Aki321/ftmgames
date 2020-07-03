@@ -198,8 +198,10 @@ function getFlipCells(i,j,color){
         return [];
     }
 
-    var dirs = [[-1,-1],[0,-1],[1,-1],[-1,0],[1,0],[-1,1],[0,1],[1,1]];
-    var result = [];
+    const dirs = [[-1,-1],[0,-1],[1,-1],[-1,0],[1,0],[-1,1],[0,1],[1,1]];
+    let result = [];
+
+    console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`);
     for(var p=0; p<dirs.length; p++){
         var flipped = getFlipCellsOneDir(i,j,dirs[p][0],dirs[p][1],color);
         result = result.concat(flipped);
@@ -207,11 +209,13 @@ function getFlipCells(i,j,color){
     return result;
 }
 
-//(i,j)に駒を置いた時に、(dx,dy)方向で駒を挟めるか？
 function getFlipCellsOneDir(i,j,dx,dy,color){
     var x = i + dx;
     var y = j + dy;
     var flipped = [];
+    console.log(`i:${i}/j:${j}/dx:${dx}/dy:${dy}/color:${color}`);
+    dataOut();
+    
 
     if(x<0||y<0||x>7||y>7||data[x][y]==color||data[x][y]==0){
         return [];
@@ -229,5 +233,11 @@ function getFlipCellsOneDir(i,j,dx,dy,color){
         } else {
             flipped.push([x,y]);
         }
+    }
+}
+
+function dataOut(){
+    for(let i=0; i<8; i++){
+        console.log(`data[${i}]${data[i]}`);
     }
 }
