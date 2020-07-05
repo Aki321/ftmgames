@@ -63,7 +63,7 @@ if (!isset($_SESSION["visited"])) {
                     <div class="wrap_item">
                         <h3><i class="fab fa-connectdevelop"></i> COMレベル</h3>
                         <div class="wrap_choise level">
-                            <div id="random" class="off">いい加減なCOM</div>
+                            <div id="random" class="off">Lv.0</div>
                             <div id="lvOne" class="on">Lv.1</div>
                             <div id="lvTwo" class="off">Lv.2</div>
                             <div id="lvThree" class="off">Lv.3</div>
@@ -76,6 +76,9 @@ if (!isset($_SESSION["visited"])) {
                             <div id="second" class="off">後手</div>
                         </div>
                     </div>
+                    <div>
+                        <button onclick="startBtn()" class="btn btn-stripe">PLAY START</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -83,12 +86,20 @@ if (!isset($_SESSION["visited"])) {
             <table id="board"></table>
             <div class="wrapInfo">
                 <div class="info">
-                    <div class="cellBlack">あなた</div>
+                    <div class="cellBlack">
+                        <div id="blackTurn"></div>
+                        <div id="blackPlayer"></div>
+                        <div class="comLvPlace"></div>
+                    </div>
                     <span id="numBlack"></span>
                     <span class="unit">枚</span>
                 </div>
                 <div class="info">
-                    <div class="cellWhite">COM</div>
+                    <div class="cellWhite">
+                        <div id="whiteTurn"></div>
+                        <div id="whitePlayer"></div>
+                        <div id="comLv" class="comLvPlace"></div>
+                    </div>
                     <span id="numWhite"></span>
                     <span class="unit">枚</span>
                 </div>

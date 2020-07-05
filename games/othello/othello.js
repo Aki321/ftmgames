@@ -14,13 +14,14 @@ const WeightData = [
 const BLACK = 1;
 const WHITE = 2;
 let data=[];
-let myTurn = false;
+let turn; // 1: BLACK 2: WHITE
+let playStateOn = 0; //0: not play / 1: on play
+let comStateOn; //0: com inactive / 1: com active
 
 function init(){
-
     const divOff = document.getElementsByClassName("off");
     for(let k=0; k<divOff.length; k++){
-        divOff[k].onclick = settingPut;
+        divOff[k].onclick = setCfg;
     }
 
 
@@ -42,12 +43,92 @@ function init(){
         }
         board.appendChild(tr);
     }
+}
 
-    put(3,3, BLACK);
-    put(4,4, BLACK);
-    put(3,4, WHITE);
-    put(4,3, WHITE);
+function startBtn(){
+    playStateOn = 1;
+    closeCfg();
+    readCfg();
+}
+
+function readCfg(){
+    //設定を確認
+    //初期配置の設定を確認
+    let initialPut;
+    //console.log(document.getElementById("parallel").className);
+    //console.log(document.getElementById("closs").className);
+
+    if(document.getElementById("parallel").className=="off"){
+        initialPut="closs"
+    } else {
+        initialPut="parallel"
+    }
+
+    //初期配置
+    if(initialPut=="closs"){
+        put(3,3, BLACK);
+        put(4,4, BLACK);
+        put(3,4, WHITE);
+        put(4,3, WHITE);
+    } else {
+        put(3,3, BLACK);
+        put(4,4, WHITE);
+        put(3,4, BLACK);
+        put(4,3, WHITE);
+    }
+
+    //対戦相手の設定を確認
+    let opponent;
+    if(document.getElementById("com").className=="off"){
+        opponent="human"
+    } else {
+        opponent="com"
+    }
+
+    //com levelの設定確認
+    let comLv;
+    if(document.getElementById("random").className=="on"){
+        comLv=0;
+    } else if(document.getElementById("lvOne").className=="on"){
+        comLv=1;
+    } else if(document.getElementById("lvTwo").className=="on"){
+        comLv=2;
+    } else if(document.getElementById("lvThree").className=="on"){
+        comLv=3;
+    }
+
+
+    //対戦相手情報＋com level情報をHTMLへ出力
+    if(opponent=="human"){
+        document.getElementById("blackPlayer").textContent = "Player1";
+        document.getElementById("whitePlayer").textContent = "Player2";
+        comStateOn=0;
+    } else {
+        document.getElementById("blackPlayer").textContent = "あなた";
+        document.getElementById("whitePlayer").textContent = `COM`;
+        document.getElementById("comLv").textContent = `Lv.${comLv}`;
+        comStateOn=1;
+    }
+
+    //Turnの設定確認
+    if(opponent=="com"){
+        if(document.getElementById("first").className=="on"){
+            turn = WHITE;
+            document.getElementById("blackTurn").textContent = "先手";
+            document.getElementById("whiteTurn").textContent = "後手";
+        } else {
+            turn = BLACK;
+            document.getElementById("blackTurn").textContent = "後手";
+            document.getElementById("whiteTurn").textContent = "先手";
+        }
+    } else {
+        turn = WHITE;
+        document.getElementById("blackTurn").textContent = "先手";
+        document.getElementById("whiteTurn").textContent = "後手";
+    }
+
     update();
+
 }
 
 function update(){
@@ -74,15 +155,19 @@ function update(){
         showMessage("ゲームオーバー");
     } else if (!blackFlip){
         showMessage("黒スキップ");
-        myTurn = false;
+        turn = WHITE;
     } else if (!whiteFlip){
         showMessage("白スキップ");
-        myTurn = true;
+        turn = BLACK;
     } else {
-        myTurn = !myTurn;
+        if(turn==BLACK){
+            turn=WHITE;
+        }else if(turn==WHITE){
+            turn=BLACK;
+        }
     }
 
-    if(!myTurn){
+    if(turn==WHITE&&comStateOn==1){
         setTimeout(think, 2000);
     }
 }
@@ -95,26 +180,38 @@ function showMessage(str){
 }
 
 function clicked(elem){
-    if(!myTurn){
+    if(turn==WHITE&&comStateOn==1){
         return;
     }
 
     const id = elem.target.id;
-    //console.log(`セルがクリックされました。idは${id}`);
+    console.log(`セルがクリックされました。idは${id}`);
+    console.log(`turnは,${turn}`)
 
     const row = parseInt(id.charAt(4));
     const column = parseInt(id.charAt(5));
+    let flipColor;
     //console.log(`${id.charAt(4)}`);
     //console.log(`${id.charAt(5)}`);
 
-    const flipped = getFlipCells(row, column, BLACK);
+    if(comStateOn==1){
+        flipColor=BLACK;
+    }else{
+        if(turn==BLACK){
+            flipColor = BLACK;
+        } else {
+            flipColor = WHITE;
+        }
+    }
+
+    const flipped = getFlipCells(row, column, flipColor);
     //console.log(`flipped${flipped}`);
 
     if(flipped.length > 0){
         for(let i=0; i<flipped.length; i++){
-            put(flipped[i][0], flipped[i][1], BLACK);
+            put(flipped[i][0], flipped[i][1], flipColor);
         }
-        put(row, column, BLACK);
+        put(row, column, flipColor);
         update();
     }
 }
@@ -259,30 +356,43 @@ function closeCfg(){
     div.style.display = "none";
 }
 
-function settingPut(elem){
+function setCfg(elem){
+
     const id = elem.target.id;
     const div = document.getElementById(id);
     div.className = "on";
     div.onclick = "";
 
     if(id=="parallel"){
-        document.getElementById("closs").className = "off";
-        document.getElementById("closs").onclick = settingPut;
-    } else {
-        document.getElementById("parallel").className = "off";
-        document.getElementById("parallel").onclick = settingPut;
+        switchOff("closs");
+    } else if(id=="closs"){
+        switchOff("parallel");
     }
 
+    if(id=="com"){
+        switchOff("human");
+    } else if(id=="human") {
+        switchOff("com");
+    }
+
+    if(id=="random"){
+        switchOff("lvOne"); switchOff("lvTwo"); switchOff("lvThree");
+    } else if (id=="lvOne"){
+        switchOff("random"); switchOff("lvTwo"); switchOff("lvThree");
+    } else if (id=="lvTwo"){
+        switchOff("random"); switchOff("lvOne"); switchOff("lvThree");
+    } else if(id=="lvThree"){
+        switchOff("random"); switchOff("lvOne"); switchOff("lvTwo");
+    }
+
+    if(id=="first"){
+        switchOff("second");
+    } else if(id=="second"){
+        switchOff("first");
+    }
 }
 
-function settingOpp(elem){
-
-}
-
-function settingLv(elem){
-
-}
-
-function settingTurn(elem){
-
+function switchOff(id){
+    document.getElementById(id).className = "off";
+    document.getElementById(id).onclick = setCfg;
 }

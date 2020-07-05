@@ -25,7 +25,6 @@ main #config {
   background: rgba(45, 45, 45, 0.8);
   z-index: 20;
   color: white;
-  display: none;
   padding-top: 90px;
 }
 
@@ -81,14 +80,13 @@ td.white {
   border-bottom-left-radius: 35px;
   border-top-right-radius: 35px;
   border-bottom-right-radius: 35px;
-  width: 210px;
+  width: 246px;
 }
 
 .wrapInfo .info .cellBlack, .wrapInfo .info .cellWhite {
-  display: inline-block;
-  line-height: 70px;
-  width: 70px;
-  height: 70px;
+  display: block;
+  width: 82px;
+  height: 82px;
   border-radius: 50%;
   border: 2px black solid;
   text-align: center;
@@ -110,7 +108,7 @@ td.white {
 
 .wrapInfo .info .unit {
   padding-right: 5px;
-  line-height: 70px;
+  line-height: 82px;
 }
 
 .fa-cog {
@@ -191,5 +189,102 @@ td.white {
   border-bottom: solid 2px #fd9535;
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+#blackTurn, #whiteTurn {
+  font-size: 12px;
+  line-height: 20px;
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+}
+
+#blackPlayer, #whitePlayer {
+  font-size: 20px;
+  line-height: 40px;
+  height: 40px;
+  width: auto;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.comLvPlace {
+  height: 20px;
+  line-height: 5px;
+  width: auto;
+  font-weight: bold;
+}
+
+@-webkit-keyframes stripe-slide {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes stripe-slide {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.btn {
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  -moz-user-select: text;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 36px 22px;
+  background-color: #fff;
+  color: #666;
+  border: 2px solid #666;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.btn:-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+.btn-stripe {
+  overflow: hidden;
+  position: relative;
+  background-color: #666;
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-stripe:after {
+  content: '';
+  display: block;
+  height: 7px;
+  width: 100%;
+  background-image: repeating-linear-gradient(45deg, #666, #666 1px, transparent 2px, transparent 5px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-top: 1px solid #666;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-size: 7px 7px;
+  background-image: repeating-linear-gradient(45deg, #fff, #fff 1px, transparent 2px, transparent 5px);
+  border-top: 1px solid #000;
+  -webkit-animation: stripe-slide 12s infinite linear forwards;
+          animation: stripe-slide 12s infinite linear forwards;
 }
 /*# sourceMappingURL=style.css.map */
