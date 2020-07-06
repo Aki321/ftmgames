@@ -396,3 +396,81 @@ function switchOff(id){
     document.getElementById(id).className = "off";
     document.getElementById(id).onclick = setCfg;
 }
+
+
+//紙吹雪
+let screen_w = window.innerWidth;
+let screen_h = window.innerHeight;
+
+const KAMI_MAX = 400;
+const COLORS = ["#f55","#55f","#5c5","#fa5","#5af"];
+
+function rand(min, max){
+    return(Math.floor(Math.random()*(max-min+1)+min));
+}
+
+class Kami {
+    constructor(){
+        this.elm = document.createElement("div");
+        document.body.appendChild(this.elm);
+
+        this.sty = this.elm.style;
+
+        this.x = rand(0, screen_w);
+        this.y = rand(0, screen_h);
+
+        this.vx = rand(-10 ,10);
+        this.vy = rand(  5 ,10);
+
+        this.ang = 0;
+        this.spd = rand(15,40);
+
+        this.rX = rand(0,10)/10;
+        this.rY = rand(0,10)/10;
+        this.rZ = rand(0,10)/10;
+
+        this.sty.position = "fixed";
+
+        this.sty.width = "10px";
+        this.sty.height = "5px";
+        this.sty.backgroundColor = COLORS[rand(0,COLORS.length)];
+
+
+
+    }
+
+    update(){
+        this.x+=this.vx;
+        this.y+=this.vy;
+
+        if(this.y>=screen_h){
+            this.x = rand(0, screen_w);
+            this.y = -20;
+        }
+
+        this.ang += this.spd;
+        this.sty.left = this.x +"px";
+        this.sty.top  = this.y +"px";
+        this.sty.transform ="rotate3D("
+                                + this.rX + "," + this.rY + ","
+                                + this.rZ + "," + this.ang + "deg)";
+
+    }
+}
+
+
+let kami = [];
+for(let i=0; i<KAMI_MAX; i++){
+    kami.push(new Kami());
+}
+
+
+
+setInterval(mainLoop, 1000/20);
+
+function mainLoop(){
+    for(let i=0; i<KAMI_MAX; i++){
+        kami[i].update();
+    }
+}
+

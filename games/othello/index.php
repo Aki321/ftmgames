@@ -42,6 +42,9 @@ if (!isset($_SESSION["visited"])) {
 </header>
 
     <main>
+        <div id="endScreen">
+
+        </div>
         <div id="config">
             <div class="container">
                 <div class="navCfg"><a onclick="closeCfg()"><span class="fas fa-times-circle"></span></a></div>
