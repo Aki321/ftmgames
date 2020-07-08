@@ -17,6 +17,8 @@ let data;
 let turn; // 1: BLACK 2: WHITE
 let playStateOn = 0; //0: not play / 1: on play
 let comStateOn; //0: com inactive / 1: com active
+let comLv;
+let numPut;
 
 function init(){
     const divOff = document.getElementsByClassName("off");
@@ -43,13 +45,15 @@ function init(){
 }
 
 function startBtn(){
+    console.log(`対局開始`);
+    numPut=1;
     //盤面を初期化する
     data=[];
     for(let i=0; i<8; i++){
         data[i] = [0,0,0,0,0,0,0,0];
     }
-    console.log(`盤面を初期化しました`);
-    dataOut();
+    //console.log(`盤面を初期化しました`);
+    //dataOut();
 
     playStateOn = 1;
     closeCfg();
@@ -82,6 +86,10 @@ function readCfg(){
         put(4,3, WHITE);
     }
 
+    console.log(`初期配置`);
+    dataOut();
+
+
     //対戦相手の設定を確認
     let opponent;
     if(document.getElementById("com").className=="off"){
@@ -91,7 +99,6 @@ function readCfg(){
     }
 
     //com levelの設定確認
-    let comLv;
     if(document.getElementById("random").className=="on"){
         comLv=0;
     } else if(document.getElementById("lvOne").className=="on"){
@@ -164,6 +171,7 @@ function update(){
 
     if(numWhite + numBlack == 64 || (!blackFlip&&!whiteFlip)){
         judgeMessage(numWhite, numBlack);
+        console.log("対局終了");
         return;
     }
 
@@ -173,6 +181,7 @@ function update(){
         if(turn==BLACK){
             if(!blackFlip){
                 showMessage("黒スキップ");
+                console.log("黒スキップ");
                 turn = WHITE;
                 continue turnCheck;
             }else{
@@ -181,6 +190,7 @@ function update(){
         }else if(turn==WHITE){
             if (!whiteFlip){
                 showMessage("白スキップ");
+                console.log("白スキップ");
                 turn = BLACK;
                 continue turnCheck;
             }else{
@@ -208,14 +218,12 @@ function clicked(elem){
     }
 
     const id = elem.target.id;
-    console.log(`セルがクリックされました。idは${id}`);
-    console.log(`turnは,${turn}`)
+    //console.log(`セルがクリックされました。idは${id}`);
+    //console.log(`turnは,${turn}`)
 
     const row = parseInt(id.charAt(4));
     const column = parseInt(id.charAt(5));
     let flipColor;
-    //console.log(`${id.charAt(4)}`);
-    //console.log(`${id.charAt(5)}`);
 
     if(comStateOn==1){
         flipColor=BLACK;
@@ -235,6 +243,8 @@ function clicked(elem){
             put(flipped[i][0], flipped[i][1], flipColor);
         }
         put(row, column, flipColor);
+        console.log(`${numPut++}手目`);
+        dataOut();
         if(turn==BLACK){
             turn = WHITE;
         } else {
@@ -255,13 +265,14 @@ function think(){
     let highScore = -1000;
     let px = -1;
     let py = -1;
+    let allCalcData=[];
 
     for(let x=0; x<8; x++){
         for(let y=0; y<8; y++){
-            var tmpData = copyData();
+            let tmpData = copyData();
             var flipped = getFlipCells(x,y,WHITE);
             if(flipped.length>0){
-                for(var i=0; i<flipped.length; i++){
+                for(let i=0; i<flipped.length; i++){
                     var p = flipped[i][0];
                     var q = flipped[i][1];
                     tmpData[p][q] = WHITE;
@@ -269,13 +280,48 @@ function think(){
                 }
 
                 var score = calcWeightData(tmpData);
-                if(score>highScore){
-                    highScore = score;
-                    px=x, py=y;
-                }
+                allCalcData.push([x,y,score]);           
             }
         }
     }
+
+    //レベル別の石の置く位置を制御
+    if(comLv==0){
+        const ranNum = Math.floor( Math.random() * allCalcData.length );
+        px=allCalcData[ranNum][0];
+        py=allCalcData[ranNum][1];
+
+    }else if(comLv==1){
+        allCalcData.sort(function(a,b){
+            if(a[2] < b[2]) return -1;
+            if(a[2] > b[2]) return  1;
+            return 0;
+        });
+        px=allCalcData[0][0];
+        py=allCalcData[0][1];
+        
+
+    }else if(comLv==2){
+        allCalcData.sort(function(a,b){
+            if(a[2] < b[2]) return -1;
+            if(a[2] > b[2]) return  1;
+            return 0;
+        });
+        let midScore = allCalcData.length >> 1;
+        px=allCalcData[midScore][0];
+        py=allCalcData[midScore][1];
+        
+    
+    }else if(comLv==3){
+        allCalcData.sort(function(a,b){
+            if(a[2] > b[2]) return -1;
+            if(a[2] < b[2]) return  1;
+            return 0;
+        });
+        px=allCalcData[0][0];
+        py=allCalcData[0][1];
+    }
+
 
     if(px>=0 && py>=0){
         var flipped = getFlipCells(px,py,WHITE);
@@ -285,8 +331,10 @@ function think(){
             }
         }
         put(px,py,WHITE);
+        console.log(`${numPut++}手目`);
+        dataOut();
         turn=BLACK;
-        console.log(`think上でputしました。`);
+        //console.log(`think上でputしました。`);
     }
     update();
 }
@@ -556,21 +604,20 @@ class Kami {
     }
 }
 
-
 let kami = [];
 
-setInterval(mainLoop, 1000/20);
-
-function mainLoop(){
-    if(kami.length!=0){  
-        for(let i=0; i<KAMI_MAX; i++){
-            kami[i].update();
-        }
-    }
+for(let i=0; i<KAMI_MAX; i++){
+    kami.push(new Kami());
 }
 
+function mainLoop(){
+    for(let i=0; i<KAMI_MAX; i++){
+        kami[i].update();
+    }
+}
+setInterval(mainLoop, 1000/20);
+
 function kami_off(){
-    kami = [];
     const chiri = document.getElementsByClassName("chiri");
     for(let i=0; i<chiri.length; i++){
         chiri[i].style.display="none";
@@ -578,7 +625,8 @@ function kami_off(){
 }
 
 function kami_on(){
-    for(let i=0; i<KAMI_MAX; i++){
-        kami.push(new Kami());
+    const chiri = document.getElementsByClassName("chiri");
+    for(let i=0; i<chiri.length; i++){
+        chiri[i].style.display="block";
     }
 }
