@@ -13,7 +13,7 @@ const WeightData = [
 
 const BLACK = 1;
 const WHITE = 2;
-let data=[];
+let data;
 let turn; // 1: BLACK 2: WHITE
 let playStateOn = 0; //0: not play / 1: on play
 let comStateOn; //0: com inactive / 1: com active
@@ -24,15 +24,12 @@ function init(){
         divOff[k].onclick = setCfg;
     }
 
-
     const board = document.getElementById("board");
     let tr = document.createElement("tr");
     let td = document.createElement("td");
 
     for(let i=0; i<8; i++){
         tr = document.createElement("tr");
-        data[i] = [0,0,0,0,0,0,0,0];
-        //console.log(`data[${i}]${data[i]}`);
 
         for(let j=0; j<8; j++){
             td = document.createElement("td");
@@ -46,6 +43,14 @@ function init(){
 }
 
 function startBtn(){
+    //盤面を初期化する
+    data=[];
+    for(let i=0; i<8; i++){
+        data[i] = [0,0,0,0,0,0,0,0];
+    }
+    console.log(`盤面を初期化しました`);
+    dataOut();
+
     playStateOn = 1;
     closeCfg();
     readCfg();
@@ -102,10 +107,12 @@ function readCfg(){
     if(opponent=="human"){
         document.getElementById("blackPlayer").textContent = "Player1";
         document.getElementById("whitePlayer").textContent = "Player2";
+        document.getElementById("comLv").style.display = `none`;
         comStateOn=0;
     } else {
         document.getElementById("blackPlayer").textContent = "あなた";
         document.getElementById("whitePlayer").textContent = `COM`;
+        document.getElementById("comLv").style.display = `block`;
         document.getElementById("comLv").textContent = `Lv.${comLv}`;
         comStateOn=1;
     }
@@ -113,25 +120,26 @@ function readCfg(){
     //Turnの設定確認
     if(opponent=="com"){
         if(document.getElementById("first").className=="on"){
-            turn = WHITE;
+            turn = BLACK;
             document.getElementById("blackTurn").textContent = "先手";
             document.getElementById("whiteTurn").textContent = "後手";
         } else {
-            turn = BLACK;
+            turn = WHITE;
             document.getElementById("blackTurn").textContent = "後手";
             document.getElementById("whiteTurn").textContent = "先手";
         }
     } else {
-        turn = WHITE;
+        turn = BLACK;
         document.getElementById("blackTurn").textContent = "先手";
         document.getElementById("whiteTurn").textContent = "後手";
     }
 
     update();
-
 }
 
 function update(){
+
+    //盤面の石をカウントしてHTMLへ出力
     let numWhite = 0;
     let numBlack = 0;
 
@@ -145,30 +153,45 @@ function update(){
             }
         }
     }
+
     document.getElementById("numBlack").textContent = numBlack;
     document.getElementById("numWhite").textContent = numWhite;
 
+
+    //終了判定
     const blackFlip = canFlip(BLACK);
     const whiteFlip = canFlip(WHITE);
 
     if(numWhite + numBlack == 64 || (!blackFlip&&!whiteFlip)){
-        showMessage("ゲームオーバー");
-    } else if (!blackFlip){
-        showMessage("黒スキップ");
-        turn = WHITE;
-    } else if (!whiteFlip){
-        showMessage("白スキップ");
-        turn = BLACK;
-    } else {
-        if(turn==BLACK){
-            turn=WHITE;
-        }else if(turn==WHITE){
-            turn=BLACK;
-        }
+        judgeMessage(numWhite, numBlack);
+        return;
     }
 
-    if(turn==WHITE&&comStateOn==1){
-        setTimeout(think, 2000);
+    //ターン処理
+    turnCheck:
+    for(var i=0; i<2; i++){
+        if(turn==BLACK){
+            if(!blackFlip){
+                showMessage("黒スキップ");
+                turn = WHITE;
+                continue turnCheck;
+            }else{
+                return;
+            }
+        }else if(turn==WHITE){
+            if (!whiteFlip){
+                showMessage("白スキップ");
+                turn = BLACK;
+                continue turnCheck;
+            }else{
+                if(comStateOn==1){
+                    setTimeout(think, 500);
+                    return;
+                }else{
+                    return;
+                }
+            }
+        }
     }
 }
 
@@ -212,6 +235,11 @@ function clicked(elem){
             put(flipped[i][0], flipped[i][1], flipColor);
         }
         put(row, column, flipColor);
+        if(turn==BLACK){
+            turn = WHITE;
+        } else {
+            turn = BLACK;
+        }
         update();
     }
 }
@@ -257,6 +285,8 @@ function think(){
             }
         }
         put(px,py,WHITE);
+        turn=BLACK;
+        console.log(`think上でputしました。`);
     }
     update();
 }
@@ -369,10 +399,17 @@ function setCfg(elem){
         switchOff("parallel");
     }
 
+    const disItem = document.getElementsByClassName("disableItem");
     if(id=="com"){
         switchOff("human");
+        for(let i=0; i<disItem.length; i++){
+            disItem[i].style.display="block";
+        }
     } else if(id=="human") {
         switchOff("com");
+        for(let i=0; i<disItem.length; i++){
+            disItem[i].style.display="none";
+        }
     }
 
     if(id=="random"){
@@ -397,23 +434,85 @@ function switchOff(id){
     document.getElementById(id).onclick = setCfg;
 }
 
+function judgeMessage(numWhite,numBlack){
+    playStateOn = 0;
+    if(comStateOn==1){  //COMと対戦の場合
+        if(numWhite==numBlack){
+            document.getElementById("judgement").textContent = "EVEN";
+            kami_off();
+        }else if(numWhite>numBlack){
+            document.getElementById("judgement").textContent = "LOSE";
+            kami_off();
+        }else if(numWhite<numBlack){
+            document.getElementById("judgement").textContent = "WIN";
+            kami_on();
+        }
 
-//紙吹雪
+    }else{  //人間と対戦の場合
+        if(numWhite==numBlack){
+            document.getElementById("judgement").textContent = "EVEN";
+            kami_off();
+        }else if(numWhite>numBlack){
+            document.getElementById("judgement").textContent = "Player2 WIN";
+            kami_on();
+        }else if(numWhite<numBlack){
+            document.getElementById("judgement").textContent = "Player1 WIN";
+            kami_on();
+        }
+    }
+
+    document.getElementById("endScreen").style.display = "block";
+}
+
+
+function setChange(){
+    data=[];
+    let cells = document.getElementsByClassName("cell");
+    let cellLength = cells.length;
+
+    for(let i=0; i<cellLength; i++){
+        cells[i].textContent = "";
+    }
+
+    document.getElementById("endScreen").style.display = "none";
+    document.getElementById("config").style.display = "block";
+}
+
+
+function replayBtn(){
+    let cells = document.getElementsByClassName("cell");
+    let cellLength = cells.length;
+
+    for(let i=0; i<cellLength; i++){
+        cells[i].textContent = "";
+    }
+
+    document.getElementById("endScreen").style.display = "none";
+    startBtn();
+}
+
+
+
+
+//紙吹雪====================================
+function rand(min, max){
+    return(Math.floor(Math.random()*(max-min+1)+min));
+}
+
 let screen_w = window.innerWidth;
 let screen_h = window.innerHeight;
 
 const KAMI_MAX = 400;
 const COLORS = ["#f55","#55f","#5c5","#fa5","#5af"];
 
-function rand(min, max){
-    return(Math.floor(Math.random()*(max-min+1)+min));
-}
+
 
 class Kami {
     constructor(){
-        this.elm = document.createElement("div");
-        document.body.appendChild(this.elm);
+        this.elm = document.createElement("div");   
+        document.getElementById("endScreen").appendChild(this.elm);
 
+        this.elm.className = "chiri";
         this.sty = this.elm.style;
 
         this.x = rand(0, screen_w);
@@ -434,9 +533,8 @@ class Kami {
         this.sty.width = "10px";
         this.sty.height = "5px";
         this.sty.backgroundColor = COLORS[rand(0,COLORS.length)];
-
-
-
+        this.sty.display = "block";
+        
     }
 
     update(){
@@ -460,17 +558,27 @@ class Kami {
 
 
 let kami = [];
-for(let i=0; i<KAMI_MAX; i++){
-    kami.push(new Kami());
-}
-
-
 
 setInterval(mainLoop, 1000/20);
 
 function mainLoop(){
-    for(let i=0; i<KAMI_MAX; i++){
-        kami[i].update();
+    if(kami.length!=0){  
+        for(let i=0; i<KAMI_MAX; i++){
+            kami[i].update();
+        }
     }
 }
 
+function kami_off(){
+    kami = [];
+    const chiri = document.getElementsByClassName("chiri");
+    for(let i=0; i<chiri.length; i++){
+        chiri[i].style.display="none";
+    }
+}
+
+function kami_on(){
+    for(let i=0; i<KAMI_MAX; i++){
+        kami.push(new Kami());
+    }
+}

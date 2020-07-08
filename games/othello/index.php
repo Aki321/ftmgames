@@ -16,7 +16,7 @@ if (!isset($_SESSION["visited"])) {
 
 <head>
     <meta charset="utf-8">
-    <title>Othello</title>
+    <title>Reversi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/f3dff3c59a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -27,27 +27,24 @@ if (!isset($_SESSION["visited"])) {
 <body onload="init()">
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <a class="navbar-brand" href="./"><span class="fas fa-gamepad"></span> Othello</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" onclick="openCfg()"><span class="fas fa-cog"></span></a>
-                </li>
-            </ul>
-        </div>
+        <a class="navbar-brand" href="./"><span class="fas fa-gamepad"></span> Reversi</a>
     </nav>
 </header>
 
     <main>
         <div id="endScreen">
-
+            <div class="container">
+                <div id="judgement">Win</div>
+                <div id="endScreenBtn">
+                    <div id="replay" onclick="replayBtn()">もう一回</div>
+                    <div id="setChange" onclick="setChange()">設定変更</div>
+                    <a id="otherGame" href="../../">他のゲームで遊ぶ</a>
+                </div>
+            </div>
         </div>
         <div id="config">
             <div class="container">
-                <div class="navCfg"><a onclick="closeCfg()"><span class="fas fa-times-circle"></span></a></div>
+                <!--<div class="navCfg"><a onclick="closeCfg()"><span class="fas fa-times-circle"></span></a></div>-->
                 <div class="wrapSet">
                     <div class="wrap_item">
                         <h3><i class="fas fa-chess-board"></i> 初期配置</h3>
@@ -63,7 +60,7 @@ if (!isset($_SESSION["visited"])) {
                             <div id="human" class="off">人間</div>
                         </div>
                     </div>
-                    <div class="wrap_item">
+                    <div class="wrap_item disableItem">
                         <h3><i class="fab fa-connectdevelop"></i> COMレベル</h3>
                         <div class="wrap_choise level">
                             <div id="random" class="off">Lv.0</div>
@@ -72,7 +69,7 @@ if (!isset($_SESSION["visited"])) {
                             <div id="lvThree" class="off">Lv.3</div>
                         </div>
                     </div>
-                    <div class="wrap_item">
+                    <div class="wrap_item disableItem">
                         <h3><i class="fas fa-people-arrows"></i> 番手</h3>
                         <div class="wrap_choise turn">
                             <div id="first" class="on">先手</div>
@@ -80,7 +77,7 @@ if (!isset($_SESSION["visited"])) {
                         </div>
                     </div>
                     <div>
-                        <button onclick="startBtn()" class="btn btn-stripe">PLAY START</button>
+                        <button onclick="startBtn()" class="btn btn-stripe">Start</button>
                     </div>
                 </div>
             </div>

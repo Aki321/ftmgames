@@ -1,15 +1,42 @@
 @charset "UTF-8";
-$tableBack: #218576;
-$waku: #854e21;
-$infoSize: 45px;
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+/* Color Theme Swatches in Hex */
+$Subtlety-of-Hue-The-Spa-1-hex: #484A47;
+$Subtlety-of-Hue-The-Spa-2-hex: #C1CE96;
+$Subtlety-of-Hue-The-Spa-3-hex: #ECEBF0;
+$Subtlety-of-Hue-The-Spa-4-hex: #687D77;
+$Subtlety-of-Hue-The-Spa-5-hex: #353129;
+
+/* Color Theme Swatches in Hex */
+$Japan-Modernism-1-hex: #FFCD3E;
+$Japan-Modernism-2-hex: #15161C;
+$Japan-Modernism-3-hex: #C9332A;
+$Japan-Modernism-4-hex: #E0E0E0;
+$Japan-Modernism-5-hex: #5A9E2C;
+
+
+$Subtlety-of-Hue-The-Spa-1-hex: $Japan-Modernism-2-hex;
+$Subtlety-of-Hue-The-Spa-5-hex: $Japan-Modernism-2-hex;
+$Subtlety-of-Hue-The-Spa-2-hex: $Japan-Modernism-5-hex;
+$Subtlety-of-Hue-The-Spa-4-hex: $Japan-Modernism-3-hex;
+
+
+//$tableBack: #218576;
+$tableBack: $Subtlety-of-Hue-The-Spa-2-hex;
+//$waku: #854e21;
+$waku: $Subtlety-of-Hue-The-Spa-5-hex;
+$infoSize: 55px;
 $infoCellSize: 82px;
+
+
+
 
 .fixed-top{
   position: static;
 }
 
 .navbar{
-  background-color: black;
+  background-color: $Subtlety-of-Hue-The-Spa-5-hex;
 }
 
 .nav-item{
@@ -18,19 +45,54 @@ $infoCellSize: 82px;
 
 main{
   margin-top: 60px;
-  
-  #config{
+
+  #config, #endScreen{
     width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: black;
-    //opacity: 0.9;
-    background: rgba(45,45,45, 0.8);
+    background-color: $Subtlety-of-Hue-The-Spa-5-hex;
+    background: rgba(45,45,45, 0.9);
     z-index: 20;
-    color: white;
+    color: $Subtlety-of-Hue-The-Spa-3-hex;
     padding-top: 90px;
+    //display: none;
+  }
+
+  #endScreen{
+    font-family: 'Shrikhand', cursive;
+    display: none;
+    font-size: 100px;
+    color: $Subtlety-of-Hue-The-Spa-3-hex;
+    padding-top: 250px;
+
+    #judgement{
+      text-align: center;
+    }
+  }
+
+  #endScreenBtn{
+    display: flex;
+    justify-content: center;
+  }
+
+  #replay, #setChange, #otherGame{
+    background-color: $Subtlety-of-Hue-The-Spa-3-hex;
+    color: $Subtlety-of-Hue-The-Spa-5-hex;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    text-align: left;
+    background-color: $Subtlety-of-Hue-The-Spa-4-hex;
+    font-size: 20px;
+    color: $Subtlety-of-Hue-The-Spa-3-hex;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 24px;
+    border-radius: 4px;
+    border-bottom: 4px solid darken($Subtlety-of-Hue-The-Spa-4-hex, 15%);
+    cursor: pointer;
   }
 }
 
@@ -50,14 +112,14 @@ td.cell{
   font-size: 50px;
   text-align: center;
   font-family: auto;
-  border: 1px solid black;
+  border: 1px solid $Subtlety-of-Hue-The-Spa-5-hex;
 }
 
 td.black{
-  color: black;
+  color: $Subtlety-of-Hue-The-Spa-1-hex;
 }
 td.white{
-  color: white;
+  color: $Subtlety-of-Hue-The-Spa-3-hex;
 }
 
 .wrapInfo{
@@ -68,14 +130,14 @@ td.white{
   .info{
     display: flex;
     justify-content: space-between;
-    background-color: lighten(black, 90%);
+    background-color: lighten($Subtlety-of-Hue-The-Spa-5-hex, 70%);
     margin-right: 10px;
     margin-left: 10px;
     padding-right: 10px;
-    border-top-left-radius: 35px;
-    border-bottom-left-radius: 35px;
-    border-top-right-radius: 35px;
-    border-bottom-right-radius: 35px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
     width: $infoCellSize*3;
 
     .cellBlack, .cellWhite{
@@ -83,22 +145,23 @@ td.white{
       width: $infoCellSize;
       height: $infoCellSize;
       border-radius: 50%;
-      border: 2px black solid;
+      border: 2px $Subtlety-of-Hue-The-Spa-5-hex solid;
       text-align: center;
-      background-color: black;
-      color: white;
+      background-color: $Subtlety-of-Hue-The-Spa-1-hex;
+      color: $Subtlety-of-Hue-The-Spa-3-hex;
       position: relative;
       z-index: 10;
     }
     
     .cellWhite{
-      background-color: white;
-      color: black;
+      background-color: $Subtlety-of-Hue-The-Spa-3-hex;
+      color: $Subtlety-of-Hue-The-Spa-5-hex;
     }
 
     #numWhite, #numBlack{
+      font-family: 'Shrikhand', cursive;
       font-size: $infoSize;
-      color: black;
+      color: $Subtlety-of-Hue-The-Spa-5-hex;
     }
 
     .unit{
@@ -143,15 +206,15 @@ td.white{
 
   div.on{
     color: white;
-    background: orangered;
+    background: $Subtlety-of-Hue-The-Spa-4-hex;
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
     font-weight: bold;
-    border: 3px outset orangered;
+    border: 3px outset $Subtlety-of-Hue-The-Spa-4-hex;
     border-radius: 10px;
   }
 
   div.off{
-    color: black;
+    color: $Subtlety-of-Hue-The-Spa-5-hex;
     background: white;
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
     font-weight: bold;
@@ -160,24 +223,6 @@ td.white{
     opacity: 0.6;
     cursor: pointer;
   }
-}
-
-.btn-square-pop {
-  position: relative;
-  display: inline-block;
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-  color: #FFF;
-  background: #fd9535;/*背景色*/
-  border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
-  border-radius: 4px;/*角の丸み*/
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-  font-weight: bold;
-}
-
-.btn-square-pop:active {
-  border-bottom: solid 2px #fd9535;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
 
 
@@ -255,6 +300,8 @@ $border-color-hover: $color-black;
 
 .btn {
     @include reset-button;
+    font-family: 'Shrikhand', cursive;
+    font-size: 50px;
     display: block;
     text-decoration: none;
     text-transform: uppercase;
