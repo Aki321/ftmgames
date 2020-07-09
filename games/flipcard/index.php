@@ -102,20 +102,12 @@ if (!isset($_SESSION["visited"])) {
                 return;
             }
 
-            //var num = src.number;
-            //src.className = "Front" + num;
-            //src.textContent = num;
 
             let clickClassName = src.className;
             let classSplit = clickClassName.split(" ");
             let frontClass = classSplit[1];
             let frontNum = Number(frontClass.replace("Front",""));
             src.className = "Front" + frontNum.toString(10);
-
-            //var div = document.createElement("div");
-            //div.className = "mask" + frontNum.toString(10);
-            //div.style.display = "none";
-            //src.appendChild(div);
             
 
             if (prevCard == null) {
