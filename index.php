@@ -47,6 +47,9 @@
                 <div class="carousel-item">
                     <a href="/games/flipcard/"><img class="slideImg d-block" src="/img/fripcads.PNG" alt="第2スライド"></a>
                 </div><!-- /.carousel-item -->
+                <div class="carousel-item">
+                    <a href="/games/reversi/"><img class="slideImg d-block" src="/img/reversi.PNG" alt="第3スライド"></a>
+                </div><!-- /.carousel-item -->
             </div><!-- /.carousel-inner -->
             <!-- スライドコントロールの設定 -->
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -71,6 +74,9 @@
                 </div>
                 <div class="p-4 col-12 col-sm-6 col-md-4">
                     <a href="/games/flipcard/"><img class="shadow-sm p-3 mb-5 bg-white rounded mx-auto d-block img-fluid" alt="slide_02" src="/img/fripcads.PNG" /></a>
+                </div>
+                <div class="p-4 col-12 col-sm-6 col-md-4">
+                    <a href="/games/reversi/"><img class="shadow-sm p-3 mb-5 bg-white rounded mx-auto d-block img-fluid" alt="slide_03" src="/img/reversi.PNG" /></a>
                 </div>
             </div>
         </div>
@@ -106,14 +112,6 @@ foreach($bloglist as $content){
             }
         }
 
-        //while (!feof($file)) {
-        //    $row = fgets($file);
-        //    
-        //    if(preg_match('/<time itemprop="dateModified">(.+)</',$row, $match)){
-        //        $dateMod = $match[1];
-        //        break;
-        //    }
-        //}
         fclose($file);
 
 ?>
