@@ -14,7 +14,7 @@
 }
 
 main {
-  margin-top: 60px;
+  margin-top: 2px;
 }
 
 main #config, main #endScreen {
@@ -24,10 +24,9 @@ main #config, main #endScreen {
   top: 0;
   left: 0;
   background-color: #15161C;
-  background: rgba(45, 45, 45, 0.9);
+  background: rgba(45, 45, 45, 0.8);
   z-index: 20;
   color: #ECEBF0;
-  padding-top: 90px;
 }
 
 main #endScreen {
@@ -35,7 +34,6 @@ main #endScreen {
   display: none;
   font-size: 100px;
   color: #ECEBF0;
-  padding-top: 250px;
 }
 
 main #endScreen #judgement {
@@ -57,7 +55,6 @@ main #replay, main #setChange, main #otherGame {
   padding: 10px;
   margin: 5px;
   display: inline-block;
-  text-align: left;
   background-color: #C9332A;
   font-size: 20px;
   color: #ECEBF0;
@@ -69,12 +66,49 @@ main #replay, main #setChange, main #otherGame {
   cursor: pointer;
 }
 
+@media (max-width: 560px) {
+  main #config h3 {
+    font-size: 20px;
+  }
+  main .wrap_choise div {
+    font-size: 20px;
+    margin: 4px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  main #endScreenBtn {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main #endScreenBtn .endBtn {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px 14px;
+  }
+}
+
+.container {
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
 #board {
   background-color: #5A9E2C;
   line-height: 0;
   border: 10px solid #15161C;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media (max-width: 560px) {
+  #board {
+    border: 5px solid #15161C;
+  }
 }
 
 td.cell {
@@ -98,6 +132,7 @@ td.white {
 
 .wrapInfo {
   margin-top: 10px;
+  margin-bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,6 +186,19 @@ td.white {
 .wrapInfo .info .unit {
   padding-right: 5px;
   line-height: 82px;
+}
+
+@media (max-width: 560px) {
+  .wrapInfo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .wrapInfo .info {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .fa-cog {
@@ -234,78 +282,46 @@ td.white {
   font-weight: bold;
 }
 
-@-webkit-keyframes stripe-slide {
-  0% {
-    background-position: 0% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-}
-
-@keyframes stripe-slide {
-  0% {
-    background-position: 0% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-}
-
-.btn {
-  overflow: visible;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  font: inherit;
-  line-height: normal;
-  cursor: pointer;
-  -moz-user-select: text;
-  font-family: 'Shrikhand', cursive;
-  font-size: 50px;
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 16px 36px 22px;
-  background-color: #fff;
-  color: #666;
-  border: 2px solid #666;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-}
-
-.btn:-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-.btn-stripe {
-  overflow: hidden;
-  position: relative;
-  background-color: #666;
-  color: #fff;
-  border-color: #000;
-}
-
-.btn-stripe:after {
-  content: '';
-  display: block;
-  height: 7px;
-  width: 100%;
-  background-image: repeating-linear-gradient(45deg, #666, #666 1px, transparent 2px, transparent 5px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-top: 1px solid #666;
+.subScreen {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  background-size: 7px 7px;
-  background-image: repeating-linear-gradient(45deg, #fff, #fff 1px, transparent 2px, transparent 5px);
-  border-top: 1px solid #000;
-  -webkit-animation: stripe-slide 12s infinite linear forwards;
-          animation: stripe-slide 12s infinite linear forwards;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+}
+
+.fa-position-left {
+  position: absolute;
+  top: calc(50% - .5em);
+  left: 1rem;
+}
+
+.fa-position-right {
+  position: absolute;
+  top: calc(50% - .5em);
+  right: 1rem;
+}
+
+.btn-gradient-radius {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  font-family: 'Shrikhand', cursive;
+  font-size: 40px;
+  padding: 7px 20px;
+  border-radius: 50px;
+  border: 2px solid #FFF;
+  text-decoration: none;
+  color: #fff;
+  background-image: linear-gradient(45deg, #15161C 0%, #414456 100%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.btn-gradient-radius:hover {
+  background-image: linear-gradient(45deg, #C9332A 0%, #f76a35 100%);
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

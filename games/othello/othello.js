@@ -42,6 +42,7 @@ function init(){
         }
         board.appendChild(tr);
     }
+    winSizeMon();
 }
 
 function startBtn(){
