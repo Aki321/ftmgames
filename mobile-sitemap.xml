@@ -1,118 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
 <!--  created with free sitemap generation system www.sitemapxml.jp  --> 
 <url>
   <loc>https://ftmgames.net/</loc>
   <priority>1.0</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/games/slidepuzzle/</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/games/flipcard/</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/games/reversi/</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-ajax</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-animate</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-array</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-beginners-guide</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-for</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-foreach</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-map-method</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-map-object</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-regular-expression</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-replace</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-settimeout</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-window</loc>
   <priority>0.8</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-ajax/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-animate/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-array/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-beginners-guide/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-for/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-foreach/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-map-method/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-map-object/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-regular-expression/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-replace/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-settimeout/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 <url>
   <loc>https://ftmgames.net/blog/javascript-window/</loc>
   <priority>0.7</priority>
+  <mobile:mobile />
 </url>
 
 </urlset>

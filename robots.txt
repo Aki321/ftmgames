@@ -1,2 +1,3 @@
 User-agent: *
 Sitemap: https://ftmgames.net/sitemap.xml
+Sitemap: https://ftmgames.net/mobile-sitemap.xml
