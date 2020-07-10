@@ -1,6 +1,6 @@
 "use strict"
 
-window.onresize = winSizeMon();
+window.onresize = winSizeMon;
 
 function winSizeMon() {
     let elemCont = document.getElementsByClassName("container");
@@ -18,4 +18,8 @@ function winSizeMon() {
             elmeCells[i].style.fontSize =`${oneCellWidth-5}px`;
         }
     }
+
+    let bodyHight = document.body.clientHeight;
+    document.getElementById("config").style.height = `${bodyHight+10}px`;
+    document.getElementById("endScreen").style.height = `${bodyHight+10}px`;
 }
