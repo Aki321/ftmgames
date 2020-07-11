@@ -19,7 +19,15 @@ function winSizeMon() {
         }
     }
 
-    let bodyHight = document.body.clientHeight;
-    document.getElementById("config").style.height = `${bodyHight+10}px`;
-    document.getElementById("endScreen").style.height = `${bodyHight+10}px`;
+    let innerHeight = window.innerHeight;
+    let bodyHeight = document.body.clientHeight;
+    let maskHeight;
+
+    if(innerHight>bodyHight){
+        maskHeight = innerHeight;
+    }else{
+        maskHeight = bodyHeight;
+    }
+    document.getElementById("config").style.height = `${maskHeight+10}px`;
+    document.getElementById("endScreen").style.height = `${maskHeight+10}px`;
 }
